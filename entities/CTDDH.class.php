@@ -1,5 +1,6 @@
 <?php 
-    require_once("config.ini");
+    require_once("config/db.class.php");
+
 
     class cTDDH{
         public $MaSP;

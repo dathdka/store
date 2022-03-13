@@ -1,5 +1,5 @@
 <?php
-    require_once("config.ini");
+    require_once("config/db.class.php");
     class hangSX
     {
         public $MaNSX;
@@ -14,6 +14,12 @@
             $sql = "INSERT INTO hangsx (MaNSX, TenNSX) VALUES ('$this->MaNSX', '$this->TenNSX')";
             $result = $DB->query_execute($sql);
             return $result;
+        }
+
+        public static function dSHSX(){
+            $DB = new dB();
+            $sql= "SELECT * FROM hangsx";
+            return $DB->select_to_array  ($sql);
         }
     }
 ?>

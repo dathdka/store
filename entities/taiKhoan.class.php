@@ -1,5 +1,5 @@
 <?php
-    require_once("config.ini");
+    require_once("config/db.class.php");
     class taiKhoan{
         public $IDNguoiDung;
         public $Email;
@@ -23,7 +23,7 @@
         public function save(){
             $DB = new dB();
             $sql = "INSERT INTO taikhoan (Email, MatKhau, HoTen, SDT, DiaChi, Diem, PhanQuyen) VALUES
-            ('$this->Email', '$this->MatKhau','$this->HoTen','$this->SDT', '$this->DiaChi', 0, false)";
+            ('$this->Email', '$this->MatKhau','$this->HoTen','$this->SDT', '$this->DiaChi', '$this->Diem', '$this->PhanQuyen')";
             $result = $DB->query_execute($sql);
             return $result;
         }

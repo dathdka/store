@@ -1,6 +1,5 @@
 <?php
-    require_once("config.ini");
-
+    require_once("config/db.class.php");
     class donDH{
         public $MaDDH;
         public $IDNguoiDung;
@@ -15,5 +14,13 @@
             $this->$ThanhTien = $ThanhTien;
         }
 
+        public function save(){
+            $DB = new dB();
+            $sql = "INSERT INTO dondh(IDNguoiDung, Email, ThoiGianDat, ThanhTien) VALUES 
+            ('$this->IDNguoiDung', '$this->Email', '$this->ThoiGianDat', '$this->ThanhTien')";
+            $result = $DB->query_execute($sql);
+            return $result;
+        }
+        
     }
 ?>

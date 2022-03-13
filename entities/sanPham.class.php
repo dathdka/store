@@ -1,5 +1,5 @@
 <?php
-    require_once("db.class.php");
+    require_once("config/db.class.php");
     class sanPham
     {
         public $MaSP;
@@ -23,5 +23,12 @@
             $this->HinhAnh = $HinhAnh;
         }
         
+        public function save(){
+            $DB = new dB();
+            $sql = "INSERT INTO sanpham ( MaNSX, TenSP, DonGia, GioiTinh, SoLuong, MoTa, KhuyenMai,HinhAnh) 
+            VALUES ('$this->MaNSX','$this->TenSP','$this->DonGia', '$this->GioiTinh','$this->SoLuong','$this->MoTa', '$this->KhuyenMai','$this->HinhAnh')";
+            $result = $DB->query_execute($sql);
+            return $result;
+        }
     }
 ?>

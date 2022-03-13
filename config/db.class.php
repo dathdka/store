@@ -1,5 +1,5 @@
 <?php
-    class Db
+    class dB
     {
         protected static $connection;
         public function connect()
