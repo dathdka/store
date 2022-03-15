@@ -1,6 +1,7 @@
 <?php
     require_once("layoutAdmin/header.php");
     require_once("entities/hangSX.class.php");
+    include("permission.php");
     if(isset($_POST["btnSubmit"])){
         $tenNSX = $_POST["txtHSX"];
         $newHSX = new hangSX($tenNSX);

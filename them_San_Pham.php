@@ -2,6 +2,7 @@
 require_once("layoutAdmin/header.php");
 require_once("entities/sanPham.class.php");
 require_once("entities/hangSX.class.php");
+include("permission.php");
 
 if (isset($_POST["btnTaoMoi"])) {
 

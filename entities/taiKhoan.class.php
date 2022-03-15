@@ -10,6 +10,7 @@
         public $Diem;
         public $PhanQuyen;
 
+
         public function __construct($Email, $MatKhau, $HoTen, $SDT, $DiaChi){
             $this->Email = $Email;
             $this->MatKhau = $MatKhau;
@@ -28,5 +29,11 @@
             return $result;
         }
         
+        public function login(){
+            $DB = new dB();
+            $sql = "SELECT * FROM taikhoan WHERE Email = '$this->Email' AND MatKhau = '$this->MatKhau'";
+            $result = mysqli_fetch_object(mysqli_query($DB->connect(),$sql));
+            return $result;
+        }
     }
 ?>

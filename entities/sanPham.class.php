@@ -30,5 +30,13 @@
             $result = $DB->query_execute($sql);
             return $result;
         }
+
+        public static function dSSP(){
+            $DB = new dB();
+            $sql= "SELECT * FROM sanpham";
+            return $DB->select_to_array  ($sql);
+        }
+
+        
     }
 ?>
