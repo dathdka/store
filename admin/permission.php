@@ -9,7 +9,7 @@ if (isset($_COOKIE["username"]) == false) {
 		// Kiểm tra quyền của người đó có phải là admin hay không
 		if (!$permission ) {
 			// Nếu không phải admin thì xuất thông báo
-			echo "Bạn không đủ quyền truy cập vào trang này<br>";
+			echo "Bạn không đủ quyền truy cập vào trang này</br>";
 			echo "  <a href='index.php'>
                         <input type='button' value='Trở về trang chủ' />
                     </a>";

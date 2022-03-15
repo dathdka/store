@@ -1,6 +1,6 @@
 <?php
-    require_once("layoutAdmin/header.php");
-    require_once("entities/taiKhoan.class.php");
+    require_once("../KhachHang/layout/header.php");
+    require_once("../entities/taiKhoan.class.php");
 
     if(isset($_POST["btnDangKy"]))
     {
@@ -44,6 +44,6 @@
 </form>
 
 <?php
-    require_once("layoutAdmin/footer.php");
+    require_once("../KhachHang/layout/footer.php");
 
 ?>

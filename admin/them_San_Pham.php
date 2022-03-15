@@ -1,8 +1,8 @@
 <?php
-require_once("layoutAdmin/header.php");
-require_once("entities/sanPham.class.php");
-require_once("entities/hangSX.class.php");
-include("permission.php");
+require_once("../admin/layoutAdmin/header.php");
+require_once("../entities/sanPham.class.php");
+require_once("../entities/hangSX.class.php");
+include("../admin/permission.php");
 
 if (isset($_POST["btnTaoMoi"])) {
 
@@ -15,7 +15,7 @@ if (isset($_POST["btnTaoMoi"])) {
     $KhuyenMai = $_POST["txtKhuyenMai"];
     //upload file
     $uploadOk = 1;
-    $target_dir = "uploads/";
+    $target_dir = "../uploads/";
     $timestamp = date("d") . date("m") . date("y") . date("h") . date("i") . date("s");
     $target_file = $target_dir . $timestamp . basename($_FILES["fileToUpload"]["name"]);
     if (file_exists($target_file)) {

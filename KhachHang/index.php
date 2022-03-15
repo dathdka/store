@@ -1,5 +1,5 @@
 <?php
-    require_once("header.php");
+    require_once("../KhachHang/layout/header.php");
     echo "<h1>hello</h1>";
 ?>
     <form method="post" >
@@ -11,5 +11,5 @@
     </form>
 <?php 
     echo (isset($_POST["btn"]))? $_POST["slc"]: "";
-    require_once("footer.php");
+    require_once("../KhachHang/layout/footer.php");
 ?>

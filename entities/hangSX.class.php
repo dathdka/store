@@ -1,5 +1,5 @@
 <?php
-    require_once("config/db.class.php");
+    require_once("../config/db.class.php");
     class hangSX
     {
         public $MaNSX;
@@ -11,7 +11,7 @@
 
         public function save(){
             $DB = new dB();
-            $sql = "INSERT INTO hangsx (MaNSX, TenNSX) VALUES ('$this->MaNSX', '$this->TenNSX')";
+            $sql = "INSERT INTO hangsx (TenNSX) VALUES ( '$this->TenNSX')";
             $result = $DB->query_execute($sql);
             return $result;
         }

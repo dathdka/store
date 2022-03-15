@@ -1,6 +1,6 @@
 <?php
-require_once("layoutAdmin/header.php");
-require_once("entities/taiKhoan.class.php")
+require_once("../admin/layoutAdmin/header.php");
+require_once("../entities/taiKhoan.class.php");
 ?>
     <form method="post" id="login" class="hidden">
         <input type="email" name="txtEmail" placeholder="Nhập Email">
@@ -16,8 +16,8 @@ require_once("entities/taiKhoan.class.php")
         $result = $user->login();
         if($result)
         {
-            setcookie("username", $result->Email,time()+3600);
-            setcookie("permission", $result->PhanQuyen,time()+3600);
+            setcookie("username", $result->Email,time()+36000);
+            setcookie("permission", $result->PhanQuyen,time()+36000);
             echo "Xin chào" . $_COOKIE["username"]. "</br>";
             echo ($_COOKIE["permission"]=='0')? "Khách hàng" : "Admin";
         }
@@ -26,5 +26,5 @@ require_once("entities/taiKhoan.class.php")
         }
     }
 
-require_once("layoutAdmin/footer.php");
+require_once("../admin/layoutAdmin/footer.php");
 ?>

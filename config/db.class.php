@@ -18,13 +18,13 @@
             $connection = $this->connect();
             $connection->query("SET NAMES utf8");
             $result = $connection->query($queryString);
-            $connection -> close();
+            // $connection -> close();
             return $result;
         }
 
         public function select_to_array($queryString)
         {
-            $row = array();
+            $rows = array();
             $result = $this -> query_execute($queryString);
             if($result == false)
             return false;
