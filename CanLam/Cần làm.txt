@@ -1,0 +1,20 @@
+Đăng nhập
+Khách hàng:
+	- Hiện sản phẩm
+	- Hiện sản phẩm khuyến mãi
+	- Thêm sản phẩm vào giỏ
+	- Tìm kiếm, sắp xếp sản phẩm
+	- xem lịch sử mua hàng - có thể xem chi tiết những mặt hàng trong hóa đơn
+	- Chỉnh sửa thông tin cá nhân
+	- Sử dụng voucher (nếu có)
+	- Thanh toán (nếu có)
+	- Đăng ký tài khoản
+Admin:
+	- Thêm - xóa - sửa sản phẩm (bao gồm thông tin khuyến mãi)
+	- Thêm - xóa - sửa hãng sản xuất
+	- Xuất các hóa đơn - Tính tổng doanh thu
+	- Xuất thông tin user 
+	- Phân quyền cho quản trị viên mới
+	
+- Chỉ những người được phân quyền admin mới được vào các trang của admin
+	
