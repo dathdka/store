@@ -3,6 +3,11 @@ require_once("../admin/layoutAdmin/header.php");
 require_once("../entities/sanPham.class.php");
 include("../admin/permission.php");
 $dSSP = sanPham::dSSP();
+?>
+    <a href="them_SanPham.php">
+    <input type='button' value='Thêm sản phẩm mới' />
+    </a>
+<?php
 foreach ($dSSP as $item) {
 ?>
     <h1><?php echo $item["MaSP"]?></h1>

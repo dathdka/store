@@ -3,7 +3,7 @@ require ("../config/db.class.php");
 include("../admin/permission.php");
 // delete data in mysql database 
 $DB = new Db();
-$id = $_GET["MaSP"];
-mysqli_query($DB->connect(),"DELETE FROM sanpham WHERE MaSP='$id'"); 
-header("Location: show_SanPham.php");  
+$id = $_GET["MaNSX"];
+mysqli_query($DB->connect(),"DELETE FROM hangsx WHERE MaNSX='$id'"); 
+header("Location: show_HSX.php");  
 ?>
