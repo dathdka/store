@@ -9,9 +9,6 @@ if(isset($_GET["btnXacNhan"])){
     $timKiem .=isset($_GET["cbNam"]) ? "GioiTinh=0     AND ":"";
     $timKiem .=isset($_GET["cbNu"]) ? "GioiTinh=1     AND ":"";
     isset($_GET["cbKM"]) ?$timKiem .= "KhuyenMai>0 ":$timKiem = substr($timKiem, 0,-9);
-    // if(!isset($_GET["cbNam"]) || !isset($_GET["cbNu"]) || !isset($_GET["cbKM"])){
-    //     str_replace("WHERE","",$timKiem);
-    // }
     $timKiem .=($_GET["sbGia"]=="giam") ? " ORDER BY DonGia DESC": " ORDER BY DonGia";
     echo $timKiem;
     $dSSP = sanPham::dSSPTK($timKiem);
