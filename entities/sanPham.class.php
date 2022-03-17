@@ -36,6 +36,12 @@
             $sql= "SELECT * FROM sanpham";
             return $DB->select_to_array  ($sql);
         }
+
+        public static function dSSPTK($sql){
+            $DB = new dB();
+            return mysqli_query($DB->connect(),$sql);
+            // return $DB->select_to_array  ($sql);
+        }
         
         public static function laySanPham($MaSP){
             $DB = new dB();
