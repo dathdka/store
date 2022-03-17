@@ -34,9 +34,9 @@ if (isset($_POST["btnTaoMoi"])) {
     $newSP = new sanPham($MaNSX, $TenSP, $DonGia, $GioiTinh, $SoLuong, $MoTa, $KhuyenMai, $target_file);
     $result = $newSP->save();
     if ($result) {
-        header("Location: them_San_Pham.php?daThem");
+        header("Location: them_SanPham.php?daThem");
     } else {
-        header("Location: them_San_Pham.php?thatBai");
+        header("Location: them_SanPham.php?thatBai");
     }
 }
 

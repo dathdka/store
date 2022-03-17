@@ -1,7 +1,6 @@
 <?php
     require_once("../config/db.class.php");
     class taiKhoan{
-        public $IDNguoiDung;
         public $Email;
         public $MatKhau;
         public $HoTen;

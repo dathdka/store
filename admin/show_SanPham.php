@@ -15,11 +15,11 @@ foreach ($dSSP as $item) {
     <img src="<?php echo $item["HinhAnh"]?>" style="width:100px">
     <form method="post">
         <input type="submit" name="btnEdit" value="Chỉnh sửa">
-        <a class="button" href="delete_San_Pham.php?MaSP=<?php echo $item["MaSP"];?>" onclick="javascript: return confirm('Bạn có chắc chắn muốn xóa?');">Delete</a>
+        <a class="button" href="delete_SanPham.php?MaSP=<?php echo $item["MaSP"];?>" onclick="javascript: return confirm('Bạn có chắc chắn muốn xóa?');">Delete</a>
     </form>
     <?php
     if(isset($_POST["btnEdit"])){
-         header("location: edit_San_Pham.php?MaSP=" .$item['MaSP']) ;
+         header("location: edit_SanPham.php?MaSP=" .$item['MaSP']) ;
     }
 }
 ?>

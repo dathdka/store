@@ -9,6 +9,7 @@
         
 ?>
     <h1><?php echo $item["TenNSX"]?></h1>
+    
 <?php
     }
     require_once("../admin/layoutAdmin/footer.php");
