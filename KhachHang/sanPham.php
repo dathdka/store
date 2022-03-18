@@ -3,7 +3,6 @@ require_once("../KhachHang/layout/header.php");
 require_once("../entities/sanPham.class.php");
 require_once("../entities/hangSX.class.php");
 require_once("../config/db.class.php");
-include("../admin/permission.php");
 $dSSP = sanPham::dSSP();
 $timKiem = "SELECT * FROM sanpham WHERE ";
 if(isset($_GET['timKiem'])){
@@ -22,7 +21,7 @@ if(isset($_GET["btnXacNhan"])){
     
 }
 
-echo $timKiem;
+// echo $timKiem;
 ?>
 <form method="GET">
     <h3>Giá: </h3>
@@ -70,8 +69,9 @@ foreach ($dSSP as $item) {
         <h1><?php echo $item["SoLuong"] ?></h1>
         <h1 style="line-through:true"><?php echo $item["KhuyenMai"] ?></h1>
         <img src="<?php echo $item["HinhAnh"] ?>" style="width:100px">
+        <?php if(isset($_COOKIE["username"])){ ?>
         <form method="post" onsubmit="return false" name="form">
-            <button type="submit" id=<?php echo $item["MaSP"]; ?> onclick="changevalue(<?php echo $item['MaSP'] ?>);">
+            <button type="submit" name="btnGio" id=<?php echo $item["MaSP"]; ?> onclick="changevalue(<?php echo $item['MaSP'] ?>);">
                 <?php
                 $DB = new dB();
                 $sql = "SELECT * FROM gioHang WHERE MaSP =" . $item["MaSP"];
@@ -85,7 +85,12 @@ foreach ($dSSP as $item) {
                 ?>
             </button>
         </form>
-
+        <?php }
+        else{
+            echo "<a href='dangNhap.php'>
+                        <input type='button' value='Đăng nhập để mua hàng' />
+                    </a>";
+        } ?>
     </div>
 <?php
 }

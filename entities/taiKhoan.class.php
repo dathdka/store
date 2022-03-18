@@ -34,5 +34,18 @@
             $result = mysqli_fetch_object(mysqli_query($DB->connect(),$sql));
             return $result;
         }
+
+        public static function layTaiKhoan($Email){
+            $DB = new dB();
+            $sql = "SELECT * FROM taikhoan WHERE email = '$Email'";
+            return mysqli_fetch_object(mysqli_query($DB->connect(),$sql));
+        }
+
+        public static function editThongTin($Email, $HoTen, $SDT, $DiaChi){
+            $DB = new dB();
+            $sql = "UPDATE taikhoan SET HoTen = '$HoTen', DiaChi = '$DiaChi', SDT='$SDT'
+            WHERE Email = '$Email'";
+            return $DB->query_execute($sql);
+        }
     }
 ?>

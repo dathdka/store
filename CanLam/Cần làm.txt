@@ -1,11 +1,11 @@
 x	-Đăng nhập
 Khách hàng:
 x	- Hiện sản phẩm 				
-	- Hiện sản phẩm khuyến mãi
+x	- Hiện sản phẩm khuyến mãi
 x	- Thêm sản phẩm vào giỏ
-	- Tìm kiếm, sắp xếp sản phẩm
+x	- Tìm kiếm, sắp xếp sản phẩm
 	- xem lịch sử mua hàng - có thể xem chi tiết những mặt hàng trong hóa đơn
-	- Chỉnh sửa thông tin cá nhân
+x	- Chỉnh sửa thông tin cá nhân
 	- Sử dụng voucher (nếu có)
 	- Thanh toán (nếu có)
 x	- Đăng ký tài khoản
@@ -13,7 +13,7 @@ Admin:
 x	- Thêm - xóa - sửa sản phẩm (bao gồm thông tin khuyến mãi)
 x	- Thêm - xóa - sửa hãng sản xuất
 	- Xuất các hóa đơn - Tính tổng doanh thu
-	- Xuất thông tin user 
+	- Xuất thông tin các user 
 	- Phân quyền cho quản trị viên mới
 	
 x	- Chỉ những người được phân quyền admin mới được vào các trang của admin
