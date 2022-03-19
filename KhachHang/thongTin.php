@@ -17,7 +17,10 @@ include("../KhachHang/permission.php");
     <?php echo $item->Diem?>
     <a href="edit_ThongTin.php">
             <input type='button' value='Chỉnh sửa thông tin' />
-        </a>
+    </a>
+    <a href="lichSu.php">
+            <input type='button' value='Lịch sử mua hàng' />
+    </a>
 <?php
 require_once("../KhachHang/layout/footer.php");
 ?>

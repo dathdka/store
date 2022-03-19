@@ -2,6 +2,7 @@
     require_once("../KhachHang/layout/header.php");
     require_once("../entities/gioHang.class.php");
     require_once("../config/db.class.php");
+    include("../KhachHang/permission.php");
     $DB = new dB();
     $dSGH =  gioHang::dSGH($_COOKIE["username"]);
     $tongTien = 0 ;

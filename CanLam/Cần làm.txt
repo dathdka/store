@@ -4,7 +4,7 @@ x	- Hiện sản phẩm
 x	- Hiện sản phẩm khuyến mãi
 x	- Thêm sản phẩm vào giỏ
 x	- Tìm kiếm, sắp xếp sản phẩm
-	- xem lịch sử mua hàng - có thể xem chi tiết những mặt hàng trong hóa đơn
+x	- xem lịch sử mua hàng - có thể xem chi tiết những mặt hàng trong hóa đơn
 x	- Chỉnh sửa thông tin cá nhân
 	- Sử dụng voucher (nếu có)
 	- Thanh toán (nếu có)

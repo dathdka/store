@@ -23,12 +23,14 @@
             return $result;
         }
 
-        public function list_CTDDH()
+        public static function dSCTDDH( $MaDDH)
         {
             $DB = new dB();
-            $sql = "SELECT * FROM ctddh";
+            $sql = "SELECT * FROM ctddh WHERE MaDDH='$MaDDH'";
             $result = $DB->select_to_array($sql);
             return $result;
         }
+
+        
     }
 ?>
