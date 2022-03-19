@@ -5,17 +5,20 @@
         public $Email;
         public $ThoiGianDat;
         public $ThanhTien;
+        public $MaNH;
         
-        public function __construct( $Email, $ThoiGianDat, $ThanhTien){
-            $this->$Email = $Email;
-            $this->$ThoiGianDat = $ThoiGianDat;
-            $this->$ThanhTien = $ThanhTien;
+        public function __construct($MaDDH, $Email, $ThoiGianDat, $ThanhTien, $MaNH){
+            $this->MaDDH = $MaDDH;
+            $this->Email = $Email;
+            $this->ThoiGianDat = $ThoiGianDat;
+            $this->ThanhTien = $ThanhTien;
+            $this->MaNH = $MaNH;
         }
 
         public function save(){
             $DB = new dB();
-            $sql = "INSERT INTO dondh( Email, ThoiGianDat, ThanhTien) VALUES 
-            ( '$this->Email', '$this->ThoiGianDat', '$this->ThanhTien')";
+            $sql = "INSERT INTO dondh(MaDDH, Email, ThoiGianDat, ThanhTien, MaNH) VALUES 
+            ('$this->MaDDH', '$this->Email', '$this->ThoiGianDat', '$this->ThanhTien','$this->MaNH')";
             $result = $DB->query_execute($sql);
             return $result;
         }
