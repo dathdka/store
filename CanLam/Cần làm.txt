@@ -7,7 +7,7 @@ x	- Tìm kiếm, sắp xếp sản phẩm
 x	- xem lịch sử mua hàng - có thể xem chi tiết những mặt hàng trong hóa đơn
 x	- Chỉnh sửa thông tin cá nhân
 	- Sử dụng voucher (nếu có)
-	- Thanh toán (nếu có)
+x	- Thanh toán (nếu có)
 x	- Đăng ký tài khoản
 Admin:
 x	- Thêm - xóa - sửa sản phẩm (bao gồm thông tin khuyến mãi)

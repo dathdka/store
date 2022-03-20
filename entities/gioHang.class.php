@@ -37,7 +37,7 @@
             $layGioHang = "SELECT * FROM giohang WHERE Email = '$Email'";
             $dSGH = $DB->select_to_array ($layGioHang);
             foreach ($dSGH as $item){
-                $newCTDDH = new cTDDH($item["MaSP"],$MaDDH,"",$item["SoLuong"]);
+                $newCTDDH = new cTDDH($item["MaSP"],$MaDDH,$item["SoLuong"]);
                 $newCTDDH->save();
                 $SP = sanPham::laySanPham($item["MaSP"]);
                 $SLMoi = $SP->SoLuong-$item["SoLuong"];

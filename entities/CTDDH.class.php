@@ -5,20 +5,18 @@
     class cTDDH{
         public $MaSP;
         public $MaDDH;
-        public $ThoiGianNhan;
         public $SoLuongDat;
 
-        public function __construct($MaSP, $MaDDH, $ThoiGianNhan, $SoLuongDat){
+        public function __construct($MaSP, $MaDDH,  $SoLuongDat){
             $this->MaSP = $MaSP;
             $this->MaDDH = $MaDDH;
-            $this->ThoiGianNhan = $ThoiGianNhan;
             $this->SoLuongDat = $SoLuongDat;
         }
 
         function save(){
             $DB = new dB();
-            $sql = "INSERT INTO ctddh (MaSP,MaDDH,ThoiGianNhan,SoLuongDat) VALUE 
-            ('$this->MaSP','$this->MaDDH','$this->ThoiGianNhan','$this->SoLuongDat')";
+            $sql = "INSERT INTO ctddh (MaSP,MaDDH,SoLuongDat) VALUE 
+            ('$this->MaSP','$this->MaDDH','$this->SoLuongDat')";
             $result = $DB->query_execute($sql);
             return $result;
         }

@@ -2,6 +2,7 @@
     require_once("../KhachHang/layout/header.php");
     require_once("../entities/gioHang.class.php");
     require_once("../entities/taiKhoan.class.php");
+    require_once("../entities/sanPham.class.php");
     require_once("../config/db.class.php");
     include("../KhachHang/permission.php");
     $DB = new dB();
@@ -12,19 +13,29 @@
     {
         $sql = "SELECT * FROM sanpham WHERE MaSP =" . $item["MaSP"];
         $temp = mysqli_fetch_array(mysqli_query($DB->connect(),$sql));
-        $tongTien += $temp["DonGia"] *$item["SoLuong"]; 
 ?>
     <h1><?php echo $temp["TenSP"]?></h1>
-    <h1><?php echo $item["SoLuong"]?></h1>
-    <h1><?php echo $temp["DonGia"]?></h1>
-<?php
+    <form>
+        <label>Số lượng</label>
+        <input type="number" name="txtSoLuong" id="<?php echo $temp["MaSP"]?>"
+        min="1" max=<?php echo $temp["SoLuong"] ?> 
+        value=<?php echo $item["SoLuong"]?>
+        onchange="changeAmount(<?php echo $temp['MaSP'] ?>)">
+        
+    </form>
+    <h1>Đơn giá: </h1>
+    <h1><?php echo ($temp["DonGia"]- ($temp["DonGia"]*$temp["KhuyenMai"]/100))?></h1>
+    <?php
+    $tongTien += ($temp["DonGia"]- ($temp["DonGia"]*$temp["KhuyenMai"]/100)) *$item["SoLuong"];
     }
-    echo "<h1>Tổng tiền = </h1>" . $tongTien;
+    echo "<h1>Tổng tiền = $tongTien </h1>" ;
+    if(count($dSGH)>0){
 ?>
     <form>
         <input type="submit" name="btnThanhToan" value="Thanh toán">
     </form>
 <?php
+    }
     if(isset($_GET["btnThanhToan"]))
     {
         $TK = taiKhoan::layTaiKhoan($Email);
@@ -34,3 +45,12 @@
         
     require_once("../KhachHang/layout/footer.php");
 ?>
+<script type="text/javascript">
+    function changeAmount(MaSP){
+        var x = document.getElementById(MaSP);
+        const xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", "tangGH.php?MaSP=" + MaSP+"&amount="+ x.value, true);
+        xmlhttp.send();
+        location.reload();
+    }
+</script>

@@ -15,7 +15,6 @@ if ($_GET["MaDDH"]) {
 ?>
             <h3>Tên sản phẩm: <?php echo $SP->TenSP ?> </h3>
             <h3>Số lượng đặt: <?php echo $item["SoLuongDat"] ?> </h3>
-            <h3>Thời gian nhận hàng: <?php echo $item["ThoiGianNhan"] ?> </h3>
 <?php
         }
     }
