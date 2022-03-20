@@ -27,4 +27,5 @@ foreach ($dSSP as $item) {
          header("location: edit_SanPham.php?MaSP=" .$item['MaSP']) ;
     }
 }
+require_once("../admin/layoutAdmin/header.php");
 ?>

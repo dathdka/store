@@ -29,6 +29,15 @@
             return $result;
         }
 
+        public static function bestSell()
+        {
+            $DB = new dB();
+            $sql = "SELECT MaSP FROM CTDDH 
+                GROUP BY MaSP
+                ORDER BY SoLuongDat DESC
+                LIMIT 6";
+            return $DB->select_to_array($sql);
+        }
         
     }
 ?>

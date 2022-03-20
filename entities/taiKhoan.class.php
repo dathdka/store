@@ -47,5 +47,11 @@
             WHERE Email = '$Email'";
             return $DB->query_execute($sql);
         }
+
+        public static function dSTK(){
+            $DB = new dB();
+            $sql = "SELECT * FROM taikhoan ";
+           return  $DB->select_to_array($sql);
+        }
     }
 ?>

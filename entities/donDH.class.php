@@ -23,6 +23,12 @@
             return $result;
         }
         
+        public static function listDDH(){
+            $DB = new dB();
+            $sql = "SELECT * FROM dondh";
+            return $DB->select_to_array($sql);
+        }
+
         public static function dSDDH($Email){
             $DB = new dB();
             $sql = "SELECT * FROM dondh WHERE Email = '$Email'";
