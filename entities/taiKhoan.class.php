@@ -53,5 +53,11 @@
             $sql = "SELECT * FROM taikhoan ";
            return  $DB->select_to_array($sql);
         }
+
+        public static function phanQuyen($Email){
+            $DB = new dB();
+            $sql = "UPDATE taikhoan SET PhanQuyen = 1 WHERE Email= '$Email'";
+            return $DB->query_execute($sql);
+        }
     }
 ?>

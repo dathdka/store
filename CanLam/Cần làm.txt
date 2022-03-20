@@ -12,9 +12,9 @@ x	- Đăng ký tài khoản
 Admin:
 x	- Thêm - xóa - sửa sản phẩm (bao gồm thông tin khuyến mãi)
 x	- Thêm - xóa - sửa hãng sản xuất
-	- Xuất các hóa đơn - Tính tổng doanh thu
-	- Xuất thông tin các user 
-	- Phân quyền cho quản trị viên mới
+x	- Xuất các hóa đơn - Tính tổng doanh thu
+x	- Xuất thông tin các user 
+x	- Phân quyền cho quản trị viên mới
 	
 x	- Chỉ những người được phân quyền admin mới được vào các trang của admin
 	

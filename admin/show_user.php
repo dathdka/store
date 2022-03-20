@@ -3,6 +3,10 @@
     require_once("../entities/taiKhoan.class.php");
     include("../admin/permission.php");
     $dSTK = taiKhoan::dSTK();
+    if(isset($_GET["thanhCong"]))
+    {
+        echo "<h1>Phân quyền thành công</h1>";
+    }
     echo "<h1>Quản lý người dùng</h1>";
     foreach($dSTK as $item){
     ?>
@@ -17,6 +21,9 @@
         } ?>
         <a href="show_HD.php?Email=<?php echo $item["Email"]?>">
             <button type="submit" name="btnHoaDon">Xem Lịch sử mua hàng</button>
+        </a>
+        <a href="phanQuyen.php?Email=<?php echo $item["Email"]?>">
+            <button type="submit" name="btnPhanQuyen" onclick="javascript: return confirm('Bạn có muốn phân quyền cho người này?');">Phân quyền</button>
         </a>
 <?php
 }
