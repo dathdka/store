@@ -45,7 +45,6 @@ if(isset($_GET["btnXacNhan"])){
         <input type="checkbox" name="cbNu" <?php echo isset($_GET["cbNu"]) ? "checked=true" : ""; ?>>
         <h3>Khuyến mãi: </h3>
         <input type="checkbox" name="cbKM" <?php echo isset($_GET["cbKM"]) ? "checked=true" : ""; ?>>
-    
         <input type="submit" name="btnXacNhan" value="Xác nhận">
 </form>
 <?php
@@ -91,6 +90,9 @@ foreach ($dSSP as $item) {
                         <input type='button' value='Đăng nhập để mua hàng' />
                     </a>";
         } ?>
+        <a href="chiTietSanPham.php?MaSP=<?php echo $item["MaSP"]?>">
+            <button>Xem chi tiết sản phẩm</button>
+        </a>
     </div>
 <?php
 }

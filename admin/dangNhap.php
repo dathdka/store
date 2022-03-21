@@ -1,5 +1,4 @@
 <?php
-require_once("../admin/layoutAdmin/header.php");
 require_once("../entities/taiKhoan.class.php");
 ?>
     <form method="post" id="login" class="hidden">
@@ -16,10 +15,15 @@ require_once("../entities/taiKhoan.class.php");
         $result = $user->login();
         if($result)
         {
-            setcookie("username", $result->Email,time()+36000);
-            setcookie("permission", $result->PhanQuyen,time()+36000);
+            $username= "username";
+            $Email = $result->Email;
+            $permission = "permission";
+            $PhanQuyen = $result->PhanQuyen;
+            setcookie($username,$Email ,time()+(86400*30),"/");
+            setcookie($permission,$PhanQuyen ,time()+(86400*30),"/");
             echo "Xin chào" . $_COOKIE["username"]. "</br>";
             echo ($_COOKIE["permission"]=='0')? "Khách hàng" : "Admin";
+            header("Location: show_HD.php");
         }
         else{
             echo "Tên tài khoản hoặc mật khẩu không đúng";
