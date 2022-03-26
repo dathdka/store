@@ -60,5 +60,11 @@
             $sql = "UPDATE taikhoan SET PhanQuyen = 1 WHERE Email= '$Email'";
             return $DB->query_execute($sql);
         }
+
+        public static function checkEmail ($email) {
+            $DB = new dB();
+            $sql = "SELECT * FROM taikhoan WHERE Email = '$email' LIMIT 1";
+            return $DB->select_to_array($sql);
+        }
     }
 ?>

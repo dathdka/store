@@ -1,5 +1,5 @@
 <?php
-require_once("../KhachHang/layout/header.php");
+// require_once("../KhachHang/layout/header.php");
 require_once("../entities/taiKhoan.class.php")
 ?>
     <form method="post" id="login" class="hidden">

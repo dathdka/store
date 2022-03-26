@@ -30,7 +30,7 @@
 
 
 <!-- Your embedded comments code -->
-<div class="fb-comments" data-href="https://www.facebook.com/permalink.php?story_fbid=102741842388210&id=102738799055181&comment_id=102742102388184" data-width="100%" data-numposts="10"></div>
+
     <?php
     require_once("../KhachHang/layout/footer.php");
 ?>
