@@ -13,18 +13,11 @@
         $result = $newUser->save();
         if($result)
         {
-            header("Location: dangKy.php?daThem");
+            echo "<h1>Đăng ký thành công</h1>";
         }
         else{
-            header("Location: dangKy.php?thatBai");
+            echo "<h1>Đã xảy ra lỗi trong quá trình đăng ký</h1>";
         }
-    }
-
-    if(isset($_GET["daThem"])){
-        echo "<h1>Đăng ký thành công</h1>";
-    }
-    if(isset($_GET["thatBai"])){
-        echo "<h1>Đã xảy ra lỗi trong quá trình đăng ký</h1>";
     }
 ?>
 

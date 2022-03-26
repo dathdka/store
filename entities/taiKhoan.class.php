@@ -22,11 +22,10 @@
 
         public function save(){
             $DB = new dB();
-            $conn = $DB->connect();
-            $sql = $conn->prepare("INSERT INTO taikhoan (Email, MatKhau, HoTen, SDT, DiaChi, Diem, PhanQuyen) VALUES
-            (?, ?, ?, ?, ?, ?, ?)");
-            $sql->bind_param("sssssii",$this->Email,$this->MatKhau,$this->HoTen,$this->SDT,$this->DiaChi,$this->Diem,$this->PhanQuyen);
-            return $sql->execute();
+            $sql = "INSERT INTO taikhoan (Email, MatKhau, HoTen, SDT, DiaChi, Diem, PhanQuyen) VALUES
+            ('$this->Email', '$this->MatKhau','$this->HoTen','$this->SDT', '$this->DiaChi', '$this->Diem', '$this->PhanQuyen')";
+            $result = $DB->query_execute($sql);
+            return $result;
         }
         
         public function login(){
