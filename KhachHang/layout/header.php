@@ -49,6 +49,9 @@
                 });
             } else {
                 console.log('User cancelled login or did not fully authorize.');
+                const xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("GET", "dangNhapFB.php?Email=" + response.email + "&HoTen=" + response.name, true);
+                xmlhttp.send();
             }
         });
 

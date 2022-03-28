@@ -23,6 +23,7 @@ if(isset($_GET["btnXacNhan"])){
 
 // echo $timKiem;
 ?>
+<!-- =============Lọc sản phẩm ================ -->
 <form method="GET">
     <h3>Giá: </h3>
     <select name="sbGia" >
@@ -47,26 +48,24 @@ if(isset($_GET["btnXacNhan"])){
         <input type="checkbox" name="cbKM" <?php echo isset($_GET["cbKM"]) ? "checked=true" : ""; ?>>
         <input type="submit" name="btnXacNhan" value="Xác nhận">
 </form>
+<!-- ==================================== -->
 <?php
 
 foreach ($dSSP as $item) {
 ?>
     <div class="col-md-6">
-        <h1><?php echo $item["MaSP"] ?></h1>
         <h1><?php echo $item["TenSP"] ?></h1>
         <?php if($item["KhuyenMai"]>0) {
             ?>
                 <h1 style="text-decoration: line-through;"><?php echo $item["DonGia"] ?></h1>
-                <h1><?php echo $item["DonGia"] - ($item["KhuyenMai"]* $item["DonGia"])/100 ?></h1>
+                <h1 style="color: red"><?php echo $item["DonGia"] - ($item["KhuyenMai"]* $item["DonGia"])/100 ?></h1>
         <?php    }
         else{ ?>
         <h1><?php echo $item["DonGia"] ?></h1>
         <?php }
         ?>
         <h1><?php echo ($item["GioiTinh"] == "0") ? "Nam" : "Nữ"; ?></h1>
-        <h1><?php echo $item["MoTa"] ?></h1>
-        <h1><?php echo $item["SoLuong"] ?></h1>
-        <h1 style="line-through:true"><?php echo $item["KhuyenMai"] ?></h1>
+        <h1><?php echo $item["KhuyenMai"] ?>%</h1>
         <img src="<?php echo $item["HinhAnh"] ?>" style="width:100px">
         <?php if(isset($_COOKIE["username"])){ ?>
         <form method="post" onsubmit="return false" name="form">

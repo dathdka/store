@@ -27,7 +27,11 @@
     <h1><?php echo ($temp["DonGia"]- ($temp["DonGia"]*$temp["KhuyenMai"]/100))?></h1>
     <?php
     $tongTien += ($temp["DonGia"]- ($temp["DonGia"]*$temp["KhuyenMai"]/100)) *$item["SoLuong"];
-    }
+    ?>
+        <button type="submit" id="<?php echo $item["MaSP"]; ?>" onclick="xoaSP(<?php  echo $item['MaSP']; ?>);" >Xóa khỏi giỏ </button>
+    <?php
+
+}
     echo "<h1>Tổng tiền = $tongTien </h1>" ;
     if(count($dSGH)>0){
 ?>
@@ -48,6 +52,13 @@
         var x = document.getElementById(MaSP);
         const xmlhttp = new XMLHttpRequest();
         xmlhttp.open("GET", "tangGH.php?MaSP=" + MaSP+"&amount="+ x.value, true);
+        xmlhttp.send();
+        location.reload();
+    }
+
+    function xoaSP(MaSP) {
+        const xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", "xoaKhoiGio.php?MaSP=" + MaSP, true);
         xmlhttp.send();
         location.reload();
     }
