@@ -16,7 +16,7 @@ if (isset($_GET["MaNSX"])) {
 ?>
     <form method="post">
     <h3>Tên nhà sản xuất</h3>
-        <input type="text" name="txtTenNSX" placeholder="<?php echo $item->TenNSX ?>">
+        <input type="text" name="txtTenNSX" placeholder="<?php echo $item->TenNSX ?>" required>
         <input type="submit" name="btnXacNhan" value="Xác nhận">
     </form>
 <?php

@@ -24,15 +24,15 @@
 
 <form method="POST">
     <h3>Email: </h3>
-    <input type="email" name="txtEmail" placeholder="Email">
+    <input type="email" name="txtEmail" placeholder="Email" required>
     <h3>Mật khẩu: </h3>
-    <input type="password" name="txtMatKhau" placeholder="Mật khẩu">
+    <input type="password" name="txtMatKhau" placeholder="Mật khẩu" required>
     <h3>Họ tên: </h3>
-    <input type="text" name="txtHoTen" placeholder="Họ tên">
+    <input type="text" name="txtHoTen" placeholder="Họ tên" required>
     <h3>Số điện thoại: </h3>
-    <input type="number" name="txtSDT" placeholder="Số điện thoại">
+    <input type="number" name="txtSDT" placeholder="Số điện thoại" required>
     <h3>Địa chỉ: </h3>
-    <input type="text" name="txtDiaChi" placeholder="Địa chỉ">
+    <input type="text" name="txtDiaChi" placeholder="Địa chỉ" required>
     <input type="submit" value="Đăng ký" name="btnDangKy">
 </form>
 

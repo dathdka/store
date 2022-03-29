@@ -2,8 +2,8 @@
 <html lang="vi">
 
 <head>
-    <meta property="fb:app_id" content="996332981322355" />
-    <meta property="fb:admins" content="100007045279349" />
+    <meta property="fb:app_id" content="&#123;996332981322355&#125;" />
+    <!-- <meta property="fb:admins" content="100007045279349" /> -->
 
     <link rel="canonical" href="localhost/store/KhachHang<?php echo $_SERVER['PHP_SELF']; ?>" />
 </head>

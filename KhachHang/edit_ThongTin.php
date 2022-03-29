@@ -9,9 +9,9 @@ $item =  taiKhoan::layTaiKhoan($Email);
 ?>
     <h1>Chỉnh sửa thông tin cá nhân</h1>
     <form method="POST">
-        <input type="text" name="txtHoTen"  value=<?php echo $item->HoTen ?>>
-        <input type="number" name="txtSDT"  value=<?php echo $item->SDT ?>>
-        <input type="text" name="txtDiaChi" value=<?php echo $item->DiaChi ?>>
+        <input type="text" name="txtHoTen"  value=<?php echo $item->HoTen ?> required>
+        <input type="number" name="txtSDT"  value=<?php echo $item->SDT ?> required>
+        <input type="text" name="txtDiaChi" value=<?php echo $item->DiaChi ?> required>
         <input type="submit" value="Lưu" name="btnLuu">
     </form>
 

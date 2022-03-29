@@ -24,7 +24,7 @@
 ?>
 
     <form method="post">
-        <input type="text" name="txtHSX" placeholder="Nhập hãng sản xuất">
+        <input type="text" name="txtHSX" placeholder="Nhập hãng sản xuất" required>
         <input type="submit" name="btnSubmit" value="Đồng ý">
     </form>
 <?php

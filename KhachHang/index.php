@@ -23,13 +23,50 @@
         <h1><?php echo $item->SoLuong ?></h1>
         <h1 style="line-through:true"><?php echo $item->KhuyenMai ?></h1>
         <img src="<?php echo $item->HinhAnh ?>" style="width:100px">
+        <?php if(isset($_COOKIE["username"])){ ?>
+        <form method="post" onsubmit="return false" name="form">
+            <button type="submit" name="btnGio" id=<?php echo $item->MaSP; ?> onclick="changevalue(<?php echo $item->MaSP; ?>);">
+                <?php
+                $DB = new dB();
+                $sql = "SELECT * FROM gioHang WHERE MaSP =" . $item->MaSP;
+                $x = mysqli_fetch_object(mysqli_query($DB->connect(), $sql));
+
+                if ($x != null) {
+                    echo "Đã thêm vào giỏ hàng";
+                } else {
+                    echo "Thêm vào giỏ";
+                }
+                ?>
+            </button>
+        </form>
+        <?php }
+        else{
+            echo "<a href='dangNhap.php'>
+                        <input type='button' value='Đăng nhập để mua hàng' />
+                    </a>";
+        } ?>
+        <a href="chiTietSanPham.php?MaSP=<?php echo $item->MaSP?>">
+            <button>Xem chi tiết sản phẩm</button>
+        </a>
 <?php 
     }
     ?>
-    <!-- Load Facebook SDK for JavaScript -->
-
-
-<!-- Your embedded comments code -->
+<script type="text/javascript">
+    function changevalue(item) {
+        const xmlhttp = new XMLHttpRequest();
+        var x = document.getElementById(item);
+        if (x.innerText == "Thêm vào giỏ") {
+            x.innerHTML = "Đã thêm vào giỏ hàng ";
+            xmlhttp.open("GET", "themVaoGio.php?MaSP=" + item, true);
+            xmlhttp.send();
+        } else {
+            x.innerHTML = "Thêm vào giỏ";
+            xmlhttp.open("GET", "xoaKhoiGio.php?MaSP=" + item, true);
+            xmlhttp.send();
+        }
+    };
+   
+</script>
 
     <?php
     require_once("../KhachHang/layout/footer.php");

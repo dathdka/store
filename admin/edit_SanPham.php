@@ -17,7 +17,7 @@ if (isset($_GET["MaSP"])) {
 ?>
     <form method="post" enctype="multipart/form-data">
         <h3>Tên sản phẩm</h3>
-        <input type="text" name="txtTenSP" placeholder=<?php echo $item->TenSP;?>>
+        <input type="text" name="txtTenSP" placeholder=<?php echo $item->TenSP;?> required>
         <h3>Nhà sản xuất</h3>
         <select name="txtHSX">
             <option value="" selected></option>
@@ -29,20 +29,20 @@ if (isset($_GET["MaSP"])) {
             ?>
         </select>
         <h3>Đơn giá</h3>
-        <input type="number" name="txtDonGia" placeholder=<?php echo $item->DonGia;?>>
+        <input type="number" name="txtDonGia" placeholder=<?php echo $item->DonGia;?> required>
         <h3>Giới tính</h3>
         <select name="cbGioiTinh">
             <option value="0">Nam</option>
             <option value="1">Nữ</option>
         </select>
         <h3>Mô tả</h3>
-        <input type="text" name="txtMoTa" placeholder=<?php echo $item->MoTa;?>>
+        <input type="text" name="txtMoTa" placeholder=<?php echo $item->MoTa;?> required>
         <h3>Số lượng</h3>
-        <input type="number" name="txtSoLuong" placeholder=<?php echo $item->SoLuong;?>>
+        <input type="number" name="txtSoLuong" placeholder=<?php echo $item->SoLuong;?> required>
         <h3>Khuyến mãi</h3>
-        <input type="number" name="txtKhuyenMai" placeholder=<?php echo $item->KhuyenMai;?>>
+        <input type="number" name="txtKhuyenMai" placeholder=<?php echo $item->KhuyenMai;?> required>
         <h3>Chọn hình ảnh</h3>
-        <input type="file" name="fileToUpload" id="fileToUpload">
+        <input type="file" name="fileToUpload" id="fileToUpload" required>
         <input type="submit" name="btnXacNhan" value="Xác nhận">
     </form>
 <?php

@@ -2,8 +2,8 @@
 require_once("../entities/taiKhoan.class.php");
 ?>
     <form method="post" id="login" class="hidden">
-        <input type="email" name="txtEmail" placeholder="Nhập Email">
-        <input type="password" name="txtPassword" placeholder="Nhập mật khẩu">
+        <input type="email" name="txtEmail" placeholder="Nhập Email" required>
+        <input type="password" name="txtPassword" placeholder="Nhập mật khẩu" required>
         <input type="submit" name="btnsubmit" value="Đăng nhập">
     </form>
 <?php

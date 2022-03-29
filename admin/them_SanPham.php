@@ -50,7 +50,7 @@ if (isset($_GET["thatBai"])) {
 
 <form method="POST" enctype="multipart/form-data">
     <h3>Tên sản phẩm</h3>
-    <input type="text" name="txtTenSP" placeholder="Tên sản phẩm">
+    <input type="text" name="txtTenSP" placeholder="Tên sản phẩm" required>
     <h3>Nhà sản xuất</h3>
     <select name="txtHSX">
         <option value="" selected></option>
@@ -62,20 +62,20 @@ if (isset($_GET["thatBai"])) {
         ?>
     </select>
     <h3>Đơn giá</h3>
-    <input type="number" name="txtDonGia" placeholder="Đơn giá">
+    <input type="number" name="txtDonGia" placeholder="Đơn giá" required>
     <h3>Giới tính</h3>
     <select name="cbGioiTinh">
         <option value="0">Nam</option>
         <option value="1">Nữ</option>
     </select>
     <h3>Mô tả</h3>
-    <input type="text" name="txtMoTa" placeholder="Mô tả">
+    <input type="text" name="txtMoTa" placeholder="Mô tả" required>
     <h3>Số lượng</h3>
-    <input type="number" name="txtSoLuong" placeholder="Số lượng">
+    <input type="number" name="txtSoLuong" placeholder="Số lượng" required>
     <h3>Khuyến mãi</h3>
-    <input type="number" name="txtKhuyenMai" placeholder="Khuyến mãi">
+    <input type="number" name="txtKhuyenMai" placeholder="Khuyến mãi" required>
     <h3>Chọn hình ảnh</h3>
-    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="file" name="fileToUpload" id="fileToUpload" required>
     <input type="submit" name="btnTaoMoi" value="Tạo mới">
 </form>
 
