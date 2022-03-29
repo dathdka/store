@@ -13,33 +13,26 @@
         $result = $newUser->save();
         if($result)
         {
-            header("Location: dangKy.php?daThem");
+            echo "<h1>Đăng ký thành công</h1>";
         }
         else{
-            header("Location: dangKy.php?thatBai");
+            echo "<h1>Đã xảy ra lỗi trong quá trình đăng ký</h1>";
         }
-    }
-
-    if(isset($_GET["daThem"])){
-        echo "<h1>Đăng ký thành công</h1>";
-    }
-    if(isset($_GET["thatBai"])){
-        echo "<h1>Đã xảy ra lỗi trong quá trình đăng ký</h1>";
     }
 ?>
 
 
 <form method="POST">
     <h3>Email: </h3>
-    <input type="email" name="txtEmail" placeholder="Email">
+    <input type="email" name="txtEmail" placeholder="Email" required>
     <h3>Mật khẩu: </h3>
-    <input type="password" name="txtMatKhau" placeholder="Mật khẩu">
+    <input type="password" name="txtMatKhau" placeholder="Mật khẩu" required>
     <h3>Họ tên: </h3>
-    <input type="text" name="txtHoTen" placeholder="Họ tên">
+    <input type="text" name="txtHoTen" placeholder="Họ tên" required>
     <h3>Số điện thoại: </h3>
-    <input type="number" name="txtSDT" placeholder="Số điện thoại">
+    <input type="number" name="txtSDT" placeholder="Số điện thoại" required>
     <h3>Địa chỉ: </h3>
-    <input type="text" name="txtDiaChi" placeholder="Địa chỉ">
+    <input type="text" name="txtDiaChi" placeholder="Địa chỉ" required>
     <input type="submit" value="Đăng ký" name="btnDangKy">
 </form>
 

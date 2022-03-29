@@ -1,13 +1,17 @@
+
 <?php
     require_once("../KhachHang/layout/header.php");
-    require_once("../entities/CTDDH.class.php");
     require_once("../entities/sanPham.class.php");
-    echo "<h1>hello</h1>";
-    $dSBC = cTDDH::bestSell();
-    foreach ($dSBC as $SP){
-        $item = sanPham::laySanPham($SP["MaSP"]);
+    require_once("../entities/binhLuan.class.php");
+
+    if(isset($_GET["MaSP"])){
+        $MaSP =$_GET["MaSP"] ;
+        $item = sanPham::laySanPham($MaSP);
+    }
+    if($item!=null){
 ?>
-    
+<div class="col-md-6">
+        <h1><?php echo $item->MaSP ?></h1>
         <h1><?php echo $item->TenSP ?></h1>
         <?php if($item->KhuyenMai>0) {
             ?>
@@ -25,7 +29,7 @@
         <img src="<?php echo $item->HinhAnh ?>" style="width:100px">
         <?php if(isset($_COOKIE["username"])){ ?>
         <form method="post" onsubmit="return false" name="form">
-            <button type="submit" name="btnGio" id=<?php echo $item->MaSP; ?> onclick="changevalue(<?php echo $item->MaSP; ?>);">
+            <button type="submit" name="btnGio" id=<?php echo $item->MaSP; ?> onclick="changevalue(<?php echo $item->MaSP ?>);">
                 <?php
                 $DB = new dB();
                 $sql = "SELECT * FROM gioHang WHERE MaSP =" . $item->MaSP;
@@ -45,12 +49,16 @@
                         <input type='button' value='Đăng nhập để mua hàng' />
                     </a>";
         } ?>
-        <a href="chiTietSanPham.php?MaSP=<?php echo $item->MaSP?>">
-            <button>Xem chi tiết sản phẩm</button>
-        </a>
-<?php 
-    }
-    ?>
+    </div>
+    <?php }else {
+        echo "<h1>Không tìm thấy sản phẩm</h1>";
+    }  ?>
+
+<span class="fb-comments-count" data-href="https://www.localhost<?php echo $_SERVER['PHP_SELF']."?MaSP=".$MaSP; ?>"></span>
+    
+
+<div class="fb-comments" data-href="https://www.localhost<?php echo $_SERVER['PHP_SELF']."?MaSP=".$MaSP; ?>" data-width="100%" data-numposts="5"></div>
+
 <script type="text/javascript">
     function changevalue(item) {
         const xmlhttp = new XMLHttpRequest();
@@ -67,7 +75,3 @@
     };
    
 </script>
-
-    <?php
-    require_once("../KhachHang/layout/footer.php");
-?>

@@ -27,21 +27,23 @@
     <h1><?php echo ($temp["DonGia"]- ($temp["DonGia"]*$temp["KhuyenMai"]/100))?></h1>
     <?php
     $tongTien += ($temp["DonGia"]- ($temp["DonGia"]*$temp["KhuyenMai"]/100)) *$item["SoLuong"];
-    }
+    ?>
+        <button type="submit" id="<?php echo $item["MaSP"]; ?>" onclick="xoaSP(<?php  echo $item['MaSP']; ?>);" >Xóa khỏi giỏ </button>
+    <?php
+
+}
     echo "<h1>Tổng tiền = $tongTien </h1>" ;
     if(count($dSGH)>0){
 ?>
-    <form>
-        <input type="submit" name="btnThanhToan" value="Thanh toán">
-    </form>
+    <?php $TK = taiKhoan::layTaiKhoan($Email); ?>
+    <a href="<?php echo "thanhToan.php?Email=".$Email."&tongTien=".$tongTien."&hoTen=".$TK->HoTen
+        ."&SDT=".$TK->SDT ?>">
+        <button>Thanh toán</button>
+    </a>
+
 <?php
     }
-    if(isset($_GET["btnThanhToan"]))
-    {
-        $TK = taiKhoan::layTaiKhoan($Email);
-        header("Location: thanhToan.php?Email=".$Email."&tongTien=".$tongTien."&hoTen=".$TK->HoTen
-        ."&SDT=".$TK->SDT);
-    }
+
         
     require_once("../KhachHang/layout/footer.php");
 ?>
@@ -50,6 +52,13 @@
         var x = document.getElementById(MaSP);
         const xmlhttp = new XMLHttpRequest();
         xmlhttp.open("GET", "tangGH.php?MaSP=" + MaSP+"&amount="+ x.value, true);
+        xmlhttp.send();
+        location.reload();
+    }
+
+    function xoaSP(MaSP) {
+        const xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", "xoaKhoiGio.php?MaSP=" + MaSP, true);
         xmlhttp.send();
         location.reload();
     }
