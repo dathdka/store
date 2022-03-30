@@ -8,21 +8,26 @@
         $item = sanPham::laySanPham($SP["MaSP"]);
 ?>
     
+    <div class="container" style="margin-top: 10px; border: 2px solid;"> 
+        <!-- <div class="row"> -->
+        <div class="col-sm-12">
+        <div class="box-text">
         <h1><?php echo $item->TenSP ?></h1>
         <?php if($item->KhuyenMai>0) {
             ?>
-                <h1 style="text-decoration: line-through;"><?php echo $item->DonGia ?></h1>
-                <h1><?php echo $item->DonGia - ($item->KhuyenMai* $item->DonGia)/100 ?></h1>
+                <p id="home-text" style="text-decoration: line-through;"><?php echo $item->DonGia ?></p>
+                <p id="home-text"><?php echo $item->DonGia - ($item->KhuyenMai* $item->DonGia)/100 ?></p>
         <?php    }
         else{ ?>
-        <h1><?php echo $item->DonGia ?></h1>
+        <p id="home-text"><?php echo $item->DonGia ?></p>
         <?php }
         ?>
-        <h1><?php echo ($item->GioiTinh == "0") ? "Nam" : "Nữ"; ?></h1>
-        <h1><?php echo $item->MoTa ?></h1>
-        <h1><?php echo $item->SoLuong ?></h1>
-        <h1 style="line-through:true"><?php echo $item->KhuyenMai ?></h1>
-        <img src="<?php echo $item->HinhAnh ?>" style="width:100px">
+        <p id="home-text"><?php echo ($item->GioiTinh == "0") ? "Nam" : "Nữ"; ?></p>
+        <p id="home-text"><?php echo $item->MoTa ?></p>
+        <p id="home-text"><?php echo $item->SoLuong ?></p>
+        <p id="home-text" style="line-through:true"><?php echo $item->KhuyenMai ?></p>
+        
+        
         <?php if(isset($_COOKIE["username"])){ ?>
         <form method="post" onsubmit="return false" name="form">
             <button type="submit" name="btnGio" id=<?php echo $item->MaSP; ?> onclick="changevalue(<?php echo $item->MaSP; ?>);">
@@ -39,18 +44,24 @@
                 ?>
             </button>
         </form>
-        <?php }
-        else{
-            echo "<a href='dangNhap.php'>
-                        <input type='button' value='Đăng nhập để mua hàng' />
+            <?php }
+            else{
+                echo "<a href='dangNhap.php' >
+                        <input type='button' value='Đăng nhập để mua hàng' class='btn btn-primary' />
                     </a>";
-        } ?>
-        <a href="chiTietSanPham.php?MaSP=<?php echo $item->MaSP?>">
-            <button>Xem chi tiết sản phẩm</button>
-        </a>
+            } ?>
+                <a href="chiTietSanPham.php?MaSP=<?php echo $item->MaSP?>">
+                    <button class="btn btn-primary" style="display: block; margin-top: 10px;">Xem chi tiết sản phẩm</button>
+                </a>
+                </div>
+                <img src="<?php echo $item->HinhAnh ?>" style="width: 40%; height:400px">
+        </div>
+    <!-- </div> -->
+    </div> 
 <?php 
     }
     ?>
+    
 <script type="text/javascript">
     function changevalue(item) {
         const xmlhttp = new XMLHttpRequest();

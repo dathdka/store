@@ -11,6 +11,9 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../assets/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" >  
+    <!-- <link href="../assets/teamplate.css" rel="stylesheet">  -->
 </head>
 
 
@@ -104,7 +107,7 @@ function checkLogin()
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v13.0&appId=996332981322355&autoLogAppEvents=1" nonce="IzTv8ApQ"></script>
     <!-- Đưa vào navbar -->
-    <form style="width: 100%;"> 
+    <form class="nav-header"> 
         <nav class="nav-horizontal">
             <div class="mask">
                 <ul class="list">
@@ -121,7 +124,7 @@ function checkLogin()
                     <li id="btn-search">
                         <a href='timKiem.php'>
                             <input type='button' value='Tìm kiếm'/>
-                            <icon class="fa fa-search"></icon>
+                            <icon class="fa fa-search" style=" height: 21px; margin-top: 16px;"></icon>
                         </a>
                     </li>
 
