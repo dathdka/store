@@ -1,12 +1,35 @@
+<style>
+    body{
+    background-image: linear-gradient(135deg, #FAB2FF 10%, #1904E5 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    }
+</style>
+<link rel="stylesheet" href="main.css">
 <?php
 // require_once("../KhachHang/layout/header.php");
 require_once("../entities/taiKhoan.class.php")
 ?>
-    <form method="post" id="login" class="hidden">
-        <input type="email" name="txtEmail" placeholder="Nhập Email" required>
-        <input type="password" name="txtPassword" placeholder="Nhập mật khẩu" required>
-        <input type="submit" name="btnsubmit" value="Đăng nhập">
-    </form>
+
+<body>
+    <div class="box-form">
+        <div class="right">
+            <h5>Login</h5>
+            <p>Don't have an account? <a href="../KhachHang/dangKy.php">Creat Your Account</a> it takes less than a minute</p>
+                <form method="post" id="login" class="hidden">
+                    <fieldset>
+                        <div class="inputs">
+                            <input type="email" name="txtEmail" placeholder="Nhập Email" required>
+                            <input type="password" name="txtPassword" placeholder="Nhập mật khẩu" required>
+                            <input type="submit" name="btnsubmit" value="Đăng nhập">
+                        </div>
+                    </fieldset>
+                </form>
+        </div>
+    </div>
+</body>
+
 <?php
     if(isset($_POST["btnsubmit"]))
     {

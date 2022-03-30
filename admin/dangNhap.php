@@ -1,10 +1,21 @@
+<link rel="stylesheet" href="main.css">
+<style>
+    body {
+    background-color: #f45b69;
+    font-family: "Asap", sans-serif;
+    }
+</style>
 <?php
 require_once("../entities/taiKhoan.class.php");
 ?>
+
     <form method="post" id="login" class="hidden">
-        <input type="email" name="txtEmail" placeholder="Nhập Email" required>
-        <input type="password" name="txtPassword" placeholder="Nhập mật khẩu" required>
-        <input type="submit" name="btnsubmit" value="Đăng nhập">
+        <fieldset>
+            <h2>ADMIN</h2>
+            <input type="email" name="txtEmail" placeholder="Nhập Email" required>
+            <input type="password" name="txtPassword" placeholder="Nhập mật khẩu" required>
+            <input type="submit" name="btnsubmit" value="Đăng nhập">
+        </fieldset>
     </form>
 <?php
     if(isset($_POST["btnsubmit"]))
