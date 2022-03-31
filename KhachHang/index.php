@@ -1,17 +1,54 @@
-<?php
-    require_once("../KhachHang/layout/header.php");
-    require_once("../entities/CTDDH.class.php");
-    require_once("../entities/sanPham.class.php");
-    echo "<h1>hello</h1>";
-    $dSBC = cTDDH::bestSell();
-    foreach ($dSBC as $SP){
-        $item = sanPham::laySanPham($SP["MaSP"]);
-?>
-    
-    <div class="container" style="margin-top: 10px; border: 2px solid;"> 
-        <!-- <div class="row"> -->
-        <div class="col-sm-12">
-        <div class="box-text">
+<body>
+    <div class="super_container">
+        <div class="main_slider" style="background-image:url(images/slider_1.jpg)">
+            <div class="container fill_height">
+	            <div class="row align-items-center fill_height">
+                    <div class="col">
+					    <div class="main_slider_content">
+						    <h6>Spring / Summer Collection 2017</h6>
+						    <h1>Get up to 30% Off New Arrivals</h1>
+                            <?php
+                                    require_once("../KhachHang/layout/header.php");
+                                    require_once("../entities/CTDDH.class.php");
+                                    require_once("../entities/sanPham.class.php");
+                                    // echo "<h1>hello</h1>";
+                                    $dSBC = cTDDH::bestSell();
+                                    foreach ($dSBC as $SP){
+                                        $item = sanPham::laySanPham($SP["MaSP"]);
+                                ?>
+	                    </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+       
+				
+    <div class="new_arrivals">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="section_title new_arrivals_title">
+						<h2>New Arrivals</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row align-items-center">
+				<div class="col text-center">
+					<div class="new_arrivals_sorting">
+						<ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">Tất Cả</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".women">Nữ</li>
+							<!-- <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">accessories</li> -->
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">Nam</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
+
+  
         <h1><?php echo $item->TenSP ?></h1>
         <?php if($item->KhuyenMai>0) {
             ?>
@@ -55,30 +92,28 @@
                 </a>
                 </div>
                 <img src="<?php echo $item->HinhAnh ?>" style="width: 40%; height:400px">
-        </div>
-    <!-- </div> -->
-    </div> 
+       
 <?php 
     }
     ?>
     
-<script type="text/javascript">
-    function changevalue(item) {
-        const xmlhttp = new XMLHttpRequest();
-        var x = document.getElementById(item);
-        if (x.innerText == "Thêm vào giỏ") {
-            x.innerHTML = "Đã thêm vào giỏ hàng ";
-            xmlhttp.open("GET", "themVaoGio.php?MaSP=" + item, true);
-            xmlhttp.send();
-        } else {
-            x.innerHTML = "Thêm vào giỏ";
-            xmlhttp.open("GET", "xoaKhoiGio.php?MaSP=" + item, true);
-            xmlhttp.send();
-        }
-    };
-   
-</script>
-
+    <script type="text/javascript">
+        function changevalue(item) {
+            const xmlhttp = new XMLHttpRequest();
+            var x = document.getElementById(item);
+            if (x.innerText == "Thêm vào giỏ") {
+                x.innerHTML = "Đã thêm vào giỏ hàng ";
+                xmlhttp.open("GET", "themVaoGio.php?MaSP=" + item, true);
+                xmlhttp.send();
+            } else {
+                x.innerHTML = "Thêm vào giỏ";
+                xmlhttp.open("GET", "xoaKhoiGio.php?MaSP=" + item, true);
+                xmlhttp.send();
+            }
+        };
+    </script>
+</div>
+</body>
     <?php
     require_once("../KhachHang/layout/footer.php");
 ?>
