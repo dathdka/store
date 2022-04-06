@@ -10,7 +10,12 @@
     }
     if($item!=null){
 ?>
-<div class="col-md-6">
+<div class="container-fluid" style="height: 740px;">
+<div class="col-md-6 col-sm-6 col-xs-12 isotope-item men" id="border-product" style="height:100%; margin-left:0px;height: 100%;left: 28%;margin-top: 100px">
+        <div class="block2-pic hov-img0 " id="margin-img">
+            <img src="<?php echo $item->HinhAnh ?>" style="width:300px">
+        </div>
+        <div class="block2-txt-child1" style="text-align:center;">
         <h1><?php echo $item->MaSP ?></h1>
         <h1><?php echo $item->TenSP ?></h1>
         <?php if($item->KhuyenMai>0) {
@@ -26,10 +31,10 @@
         <h1><?php echo $item->MoTa ?></h1>
         <h1><?php echo $item->SoLuong ?></h1>
         <h1 style="line-through:true"><?php echo $item->KhuyenMai ?></h1>
-        <img src="<?php echo $item->HinhAnh ?>" style="width:100px">
+        </div>
         <?php if(isset($_COOKIE["username"])){ ?>
         <form method="post" onsubmit="return false" name="form">
-            <button type="submit" name="btnGio" id=<?php echo $item->MaSP; ?> onclick="changevalue(<?php echo $item->MaSP ?>);">
+            <button type="submit" name="btnGio" class="btn btn-primary"id=<?php echo $item->MaSP; ?> onclick="changevalue(<?php echo $item->MaSP ?>);">
                 <?php
                 $DB = new dB();
                 $sql = "SELECT * FROM gioHang WHERE MaSP =" . $item->MaSP;
@@ -46,13 +51,14 @@
         <?php }
         else{
             echo "<a href='dangNhap.php'>
-                        <input type='button' value='Đăng nhập để mua hàng' />
+                        <input type='button' value='Đăng nhập để mua hàng' class='btn btn-primary' style='margin-top: 38px;'/>
                     </a>";
         } ?>
     </div>
     <?php }else {
         echo "<h1>Không tìm thấy sản phẩm</h1>";
     }  ?>
+</div>
 
 <span class="fb-comments-count" data-href="https://www.localhost<?php echo $_SERVER['PHP_SELF']."?MaSP=".$MaSP; ?>"></span>
     

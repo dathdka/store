@@ -7,13 +7,18 @@ if(isset($_GET["thanhCong"]))
 $Email = $_COOKIE["username"];
 $item =  taiKhoan::layTaiKhoan($Email);
 ?>
-    <h1>Chỉnh sửa thông tin cá nhân</h1>
+    
+<div id="container-edit">
+  <div class='signup'>
     <form method="POST">
-        <input type="text" name="txtHoTen"  value=<?php echo $item->HoTen ?> required>
-        <input type="number" name="txtSDT"  value=<?php echo $item->SDT ?> required>
-        <input type="text" name="txtDiaChi" value=<?php echo $item->DiaChi ?> required>
+        <h1>Chỉnh sửa thông tin cá nhân</h1>
+        <input type="text" name="txtHoTen" placeholder="Họ Tên" value=<?php echo $item->HoTen ?> required>
+        <input type="number" name="txtSDT" placeholder="Số Điện Thoại" value=<?php echo $item->SDT ?> required>
+        <input type="text" name="txtDiaChi" placeholder="Địa Chỉ" value=<?php echo $item->DiaChi ?> required>
         <input type="submit" value="Lưu" name="btnLuu">
-    </form>
+     </form>
+  </div>
+</div>
 
 <?php
     if(isset($_POST["btnLuu"]))

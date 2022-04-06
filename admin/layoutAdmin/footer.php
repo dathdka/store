@@ -1,5 +1,7 @@
 </body>
-<footer>
-    HUTECH 1
-</footer>
+    
+    <footer>
+                HUTECH
+                <script src="../admin/js/main.js"></script>
+    </footer>
 </html>

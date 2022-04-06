@@ -1,11 +1,4 @@
-<style>
-    body{
-    background-image: linear-gradient(135deg, #FAB2FF 10%, #1904E5 100%);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    }
-</style>
+
 <?php
     require_once("../KhachHang/layout/header.php");
     require_once("../entities/taiKhoan.class.php");
@@ -29,7 +22,7 @@
     }
 ?>
 
-<body>
+<body class="animsition" style="animation-duration: 1500ms; opacity: 1;background-color: cadetblue;height: auto; ">
     <div class="box-form">
         <div class="right">
             <h5>Register</h5>
@@ -46,15 +39,16 @@
                             <input type="number" name="txtSDT" placeholder="Số điện thoại" required>
                             <h3>Địa chỉ: </h3>
                             <input type="text" name="txtDiaChi" placeholder="Địa chỉ" required>
-                            <input type="submit" value="Đăng ký" name="btnDangKy">
+                            <input style="background-color:cadetblue; background-image:none" type="submit" value="Đăng ký" name="btnDangKy">
                         </div>
                     </fieldset>
                 </form>
         </div>
     </div>  
-</body>
+
 
 <?php
     require_once("../KhachHang/layout/footer.php");
 
 ?>
+</body>

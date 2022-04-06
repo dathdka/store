@@ -53,7 +53,7 @@
         
         public static function laySanPham($MaSP){
             $DB = new dB();
-            $sql= "SELECT * FROM sanpham WHERE MaSP = '$MaSP'";
+            $sql= "SELECT * FROM sanpham WHERE MaSP = '$MaSP' LIMIT 1";
             $result = mysqli_fetch_object(mysqli_query($DB->connect(),$sql));
             return $result;
         }

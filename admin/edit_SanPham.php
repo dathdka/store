@@ -1,50 +1,91 @@
 <?php
 require_once("../admin/layoutAdmin/header.php");
+?>
+<div style="width:85%;float: right">
+<?php
 require_once("../entities/sanPham.class.php");
 require_once("../entities/hangSX.class.php");
 include("../admin/permission.php");
 if (isset($_GET["thanhCong"])) {
-    echo "<h1>Chỉnh sửa thành công</h1>";
+    echo "<div class='notice success'><p>Chỉnh sửa thành công</p></div>";
     echo "  <a href='show_SanPham.php'>
-                        <input type='button' value='Trở về trang chủ' />
+                        <input class='btn btn-primary' type='button' value='Trở về trang chủ' />
                     </a>";
 }
 if (isset($_GET["thatBai"])) {
-    echo "<h1>Đã xảy ra lỗi trong quá trình sửa</h1>";
+    echo " <div class='notice error'><p>Đã xảy ra lỗi trong quá trình sửa</p></div>";
+   
 }
 if (isset($_GET["MaSP"])) {
     $item = sanPham::laySanPham($_GET["MaSP"]);
 ?>
-    <form method="post" enctype="multipart/form-data">
-        <h3>Tên sản phẩm</h3>
-        <input type="text" name="txtTenSP" placeholder=<?php echo $item->TenSP;?> required>
-        <h3>Nhà sản xuất</h3>
-        <select name="txtHSX">
-            <option value="" selected></option>
-            <?php
-            $HSX = hangSX::dSHSX();
-            foreach ($HSX as $hsx) {
-                echo "<option value=" . $hsx["MaNSX"] . ">" . $hsx["TenNSX"] . "</option>";
-            }
-            ?>
-        </select>
-        <h3>Đơn giá</h3>
-        <input type="number" name="txtDonGia" placeholder=<?php echo $item->DonGia;?> required>
-        <h3>Giới tính</h3>
-        <select name="cbGioiTinh">
-            <option value="0">Nam</option>
-            <option value="1">Nữ</option>
-        </select>
-        <h3>Mô tả</h3>
-        <input type="text" name="txtMoTa" placeholder=<?php echo $item->MoTa;?> required>
-        <h3>Số lượng</h3>
-        <input type="number" name="txtSoLuong" placeholder=<?php echo $item->SoLuong;?> required>
-        <h3>Khuyến mãi</h3>
-        <input type="number" name="txtKhuyenMai" placeholder=<?php echo $item->KhuyenMai;?> required>
-        <h3>Chọn hình ảnh</h3>
-        <input type="file" name="fileToUpload" id="fileToUpload" required>
-        <input type="submit" name="btnXacNhan" value="Xác nhận">
-    </form>
+ 
+<div class="form_wrapper">
+  <div class="form_container">
+    <div class="title_container">
+      <h2>Sửa Sản Phẩm</h2>
+    </div>
+    <div class="row clearfix">
+      <div class="">
+        <form method="POST" enctype="multipart/form-data">
+            <div class="input_field"> <span><i class="fa-solid fa-bars"></i></span>
+                <input type="text" name="txtTenSP" placeholder=<?php echo $item->TenSP;?> required>
+            </div>
+
+            <div class="input_field select_option">
+                <select name="txtHSX">
+                    <option value="" selected></option>
+                    <?php
+                    $HSX = hangSX::dSHSX();
+                    foreach ($HSX as $hsx) {
+                        echo "<option value=" . $hsx["MaNSX"] . ">" . $hsx["TenNSX"] . "</option>";
+                    }
+                    ?>
+                </select>
+                <div class="select_arrow"></div>
+            </div>
+
+            <div class="input_field"> 
+                <input type="number" name="txtDonGia" placeholder=<?php echo $item->DonGia;?> required>
+            </div>
+
+            <div class="input_field select_option">
+                <select name="cbGioiTinh">
+                    <option value="0">Nam</option>
+                    <option value="1">Nữ</option>
+                </select>
+                <div class="select_arrow"></div>
+            </div>
+
+          <div class="input_field"> <span><i class="fa-solid fa-file-lines"></i></span>
+            <input type="text" name="txtMoTa" placeholder=<?php echo $item->MoTa;?> required>
+          </div>
+          
+          <div class="row clearfix">
+            <div class="col_half">
+                <div class="input_field">
+                    <input type="number"  style="width:100%" name="txtSoLuong" placeholder=<?php echo $item->SoLuong;?> required> 
+                </div>
+            </div>
+            
+            <div class="col_half">
+                <div class="input_field">
+                    <input type="number"  style="width:100%" name="txtKhuyenMai" placeholder=<?php echo $item->KhuyenMai;?> required>   
+                </div>
+            </div>
+          </div>
+            	
+          <div class="input_field">
+                <input type="file" name="fileToUpload" id="fileToUpload" class="inputfile" required>   
+                <label style="padding:5px" for="fileToUpload">Choose a file <i class="fa fa-upload"></i></label> 
+          </div>
+
+          <input type="submit" name="btnXacNhan" value="Xác nhận">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 <?php
 }
 if(isset($_POST["btnXacNhan"])){
@@ -61,15 +102,16 @@ if(isset($_POST["btnXacNhan"])){
     $timestamp = date("d") . date("m") . date("y") . date("h") . date("i") . date("s");
     $target_file = $target_dir . $timestamp . basename($_FILES["fileToUpload"]["name"]);
     if (file_exists($target_file)) {
-        echo "Đã trùng ảnh";
+        echo "<div class='notice warning'><p>Đã trùng ảnh</p></div>";
         $uploadOk = 0;
     }
     if ($_FILES["fileToUpload"]["size"] > 500000) {
-        echo "File đã vượt quá kích thước cho phép";
+        echo "<div class='notice warning'><p>File đã vượt quá kích thước cho phép</p></div>";
         $uploadOk = 0;
     }
     if ($uploadOk == 0) {
-        echo "Upload thất bại";
+        echo "<div class='notice warning'><p>Upload thất bại</p></div>";
+        
     } else {
         move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
     }

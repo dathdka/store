@@ -1,12 +1,12 @@
+<link rel="stylesheet" href="../KhachHang/css/main.css">
+<!-- <link rel="stylesheet" href="../KhachHang/css/util.css"> -->
 <style>
-    body{
-    background-image: linear-gradient(135deg, #FAB2FF 10%, #1904E5 100%);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    body, html{
+        background-color: #8a9aae;
+       
+        
     }
 </style>
-<link rel="stylesheet" href="main.css">
 <?php
 // require_once("../KhachHang/layout/header.php");
 require_once("../entities/taiKhoan.class.php")
@@ -22,13 +22,13 @@ require_once("../entities/taiKhoan.class.php")
                         <div class="inputs">
                             <input type="email" name="txtEmail" placeholder="Nhập Email" required>
                             <input type="password" name="txtPassword" placeholder="Nhập mật khẩu" required>
-                            <input type="submit" name="btnsubmit" value="Đăng nhập">
+                            <input type="submit" name="btnsubmit" value="Đăng nhập" style="background-color:cadetblue; background-image:none">
                         </div>
                     </fieldset>
                 </form>
         </div>
     </div>
-</body>
+
 
 <?php
     if(isset($_POST["btnsubmit"]))
@@ -50,7 +50,8 @@ require_once("../entities/taiKhoan.class.php")
             header("Location: index.php");
         }
         else{
-            echo "Tên tài khoản hoặc mật khẩu không đúng";
+            echo "<div class='notice error'><p>Tên tài khoản hoặc mật khẩu không đúng</p></div>";
+            
         }
     }
 
