@@ -211,7 +211,17 @@ function checkLogin()
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
 						<ul class="main-menu">
-							<li class="active-menu">
+                        <li class="active-menu">
+                                <a href="index.php">
+                                    <input type="button" value="Trang chủ" />Trang chủ
+                                </a>
+							</li>
+                            <li>
+                                <a href="sanPham.php">
+                                    <input type='button' value='Sản phẩm' />Sản phẩm
+                                </a>
+							</li>
+							<li >
                                 <a href='thongTin.php' class="flex-c-m trans-04 p-lr-25">
                                     <input type='button' value='Thông tin' />Thông tin
                                 </a>

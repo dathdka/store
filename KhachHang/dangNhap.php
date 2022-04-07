@@ -3,8 +3,6 @@
 <style>
     body, html{
         background-color: #8a9aae;
-       
-        
     }
 </style>
 <?php
@@ -12,7 +10,7 @@
 require_once("../entities/taiKhoan.class.php")
 ?>
 
-<body>
+
     <div class="box-form">
         <div class="right">
             <h5>Login</h5>

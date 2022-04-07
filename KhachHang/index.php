@@ -104,24 +104,24 @@
         $item = sanPham::laySanPham($SP["MaSP"]);
 		?>
     	<div class="col-md-5 col-sm-6 col-xs-12 isotope-item men" id="border-product" style="height:400px;margin-left: 110px;margin-top:20px">
-		<div class="block2-pic hov-img0 " id="margin-img" style="margin: 26px 0px 0px 18px; float: left; width: 25%;">
+		<div class="block2-pic hov-img0 " id="margin-img" style="margin: 26px 0px 0px 18px; float: left; ">
 		<img src="<?php echo $item->HinhAnh ?>" style="width:200px; height:200px">
 		</div>
-		<div class="block2-txt-child1" style="text-align: center;float: right;width: 72%;margin-top: 23px; height:100%">
-        <p><?php echo $item->TenSP ?></p>
+		<div class="block2-txt-child1" style="text-align: center;float: right;width: 61%;margin-top: 23px;height: 80%;">
+        <h2><?php echo $item->TenSP ?></h2>
         <?php if($item->KhuyenMai>0) {
             ?>
-                <p style="text-decoration: line-through;"><?php echo $item->DonGia ?></p>
-                <p><?php echo $item->DonGia - ($item->KhuyenMai* $item->DonGia)/100 ?></p>
+                <h2 style="text-decoration: line-through;"><?php echo $item->DonGia ?></h2>
+                <h2><?php echo $item->DonGia - ($item->KhuyenMai* $item->DonGia)/100 ?></h2>
         <?php    }
         else{ ?>
-        <p><?php echo $item->DonGia ?></p>
+        <h2><?php echo $item->DonGia ?></h2>
         <?php }
         ?>
-        <p><?php echo ($item->GioiTinh == "0") ? "Nam" : "Nữ"; ?></p>
-        <p><?php echo $item->MoTa ?></p>
-        <p><?php echo $item->SoLuong ?></p>
-        <p style="line-through:true"><?php echo $item->KhuyenMai ?></p>
+        <h2><?php echo ($item->GioiTinh == "0") ? "Nam" : "Nữ"; ?></h2>
+        <h2><?php echo $item->MoTa ?></h2>
+        <h2><?php echo $item->SoLuong ?></h2>
+        <h2 style="line-through:true"><?php echo $item->KhuyenMai ?></h2>
         </div>
 
         <?php if(isset($_COOKIE["username"])){ ?>

@@ -2085,9 +2085,9 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-.block2-txt-child1 {
+/* .block2-txt-child1 {
   width: calc(100% - 30px);
-}
+} */
 
 .block2-txt-child2 {
   width: 30px;
@@ -3629,9 +3629,9 @@ fieldset {
 }
 
 .box-form {
-  /* margin: 100 auto; */
-  margin-top: 150px;
-  margin-left: 698px;
+  margin: 100 auto;
+  margin-top: 115px;
+  /* margin-left: 698px; */
   width: 25%;
   background: #ffffff;
   border-radius: 10px;

@@ -14,7 +14,7 @@
         $result = $newUser->save();
         if($result)
         {
-            echo "<h1>Đăng ký thành công</h1>";
+            echo "<div style='position: absolute;width: 20%;margin-top: 65px;' class='notice success'><p>Đăng ký thành công</p></div>";
         }
         else{
             echo "<h1>Đã xảy ra lỗi trong quá trình đăng ký</h1>";
@@ -23,7 +23,7 @@
 ?>
 
 <body class="animsition" style="animation-duration: 1500ms; opacity: 1;background-color: cadetblue;height: auto; ">
-    <div class="box-form">
+    <div class="box-form" style="margin-left:570px">
         <div class="right">
             <h5>Register</h5>
                 <form method="POST">

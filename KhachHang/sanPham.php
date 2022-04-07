@@ -27,7 +27,7 @@ if(isset($_GET["btnXacNhan"])){
 <div class="bg0 m-t-23 p-b-140">
 		<div class="container">
 			<div class="flex-w flex-sb-m p-b-52" style="width: 100%;margin-top: 75px;justify-content: flex-start; padding: 0px;">
-				<div class="flex-w flex-c-m m-tb-10" style="width:200%">
+				<div class="flex-w flex-c-m m-tb-10" style="width:200%;">
 					<div class="flex-c-m stext-106 cl6 size-104 bor4 pointer hov-btn3 trans-04 m-r-8 m-tb-4 js-show-filter">
 						<i class="icon-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-filter-list"></i>
 						<i class="icon-close-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
@@ -127,26 +127,26 @@ foreach ($dSSP as $item) {
 				Quick View
 			</a>
 
-        <img src="<?php echo $item["HinhAnh"] ?>" style="width:100px; margin-top: 10px;">
+        <img src="<?php echo $item["HinhAnh"] ?>" style="width:120px;height:100px; margin-top: 10px;">
         </div>
         <div class="block2-txt-child1" style="text-align:center;">
-        <h1><?php echo $item["TenSP"] ?></h1>
+        <h2><?php echo $item["TenSP"] ?></h2>
         <?php if($item["KhuyenMai"]>0) {
             ?>
-                <h1 style="text-decoration: line-through;"><?php echo $item["DonGia"] ?></h1>
-                <h1 style="color: red"><?php echo $item["DonGia"] - ($item["KhuyenMai"]* $item["DonGia"])/100 ?></h1>
+                <h2 style="text-decoration: line-through;"><?php echo $item["DonGia"] ?></h2>
+                <h2 style="color: red"><?php echo $item["DonGia"] - ($item["KhuyenMai"]* $item["DonGia"])/100 ?></h2>
         <?php    }
         else{ ?>
-        <h1><?php echo $item["DonGia"] ?></h1>
+        <h2><?php echo $item["DonGia"] ?></h2>
         <?php }
         ?>
-        <h1><?php echo ($item["GioiTinh"] == "0") ? "Nam" : "Nữ"; ?></h1>
-        <h1><?php echo $item["KhuyenMai"] ?>%</h1>
+        <h2><?php echo ($item["GioiTinh"] == "0") ? "Nam" : "Nữ"; ?></h2>
+        <h2><?php echo $item["KhuyenMai"] ?>%</h2>
         </div>
         
         <?php if(isset($_COOKIE["username"])){ ?>
         <form method="post" onsubmit="return false" name="form">
-            <button type="submit" name="btnGio" id=<?php echo $item["MaSP"]; ?> onclick="changevalue(<?php echo $item['MaSP'] ?>);">
+            <button type="submit" name="btnGio" class="btn btn-primary" id=<?php echo $item["MaSP"]; ?> onclick="changevalue(<?php echo $item['MaSP'] ?>);">
                 <?php
                 $DB = new dB();
                 $sql = "SELECT * FROM gioHang WHERE MaSP =" . $item["MaSP"];

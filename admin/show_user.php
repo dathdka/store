@@ -26,23 +26,23 @@
       <th id="text-center" style="width:10%;background-color: #95A5A6;color:black;">Phân Quyền</th>
     </tr>
     <tr >
-        <td id="text-center" data-label="Email">
+        <td id="text-center" data-label="Email" style="width:20%;">
           <p><?php echo $item["Email"] ?></p>
         </td>
 
-        <td id="text-center" data-label="Họ Tên">
+        <td id="text-center" data-label="Họ Tên" style="width:12%;">
             <p><?php echo $item["HoTen"] ?></p>
         </td>
 
-        <td id="text-center" data-label="SDT">
+        <td id="text-center" data-label="SDT" style="width:10%;">
             <p> <?php echo $item["SDT"] ?></p>
         </td>
 
-        <td id="text-center" data-label="Địa chỉ">
+        <td id="text-center" data-label="Địa chỉ" style="width:10%;">
             <p> <?php echo $item["DiaChi"] ?></p>
         </td>
 
-        <td id="text-center" data-label="Quyền Hạn" >
+        <td id="text-center" data-label="Quyền Hạn" style="width:5%;">
             <?php if($item["PhanQuyen"]){
                 echo "<p> admin</p>";
             }else{
@@ -50,13 +50,13 @@
             } ?>
         </td>
 
-        <td id="text-center" data-label="Lịch Sử Mua">
+        <td id="text-center" data-label="Lịch Sử Mua" style="width:12%;">
             <a href="show_HD.php?Email=<?php echo $item["Email"]?>">
                 <button type="submit" name="btnHoaDon" class="btn btn-primary">Lịch sử mua hàng</button>
             </a>
         </td>
 
-        <td id="text-center" data-label="Phân Quyền">
+        <td id="text-center" data-label="Phân Quyền" style="width:5%;">
             <a href="phanQuyen.php?Email=<?php echo $item["Email"]?>">
                 <button type="submit" name="btnPhanQuyen" class="btn btn-danger" onclick="javascript: return confirm('Bạn có muốn phân quyền cho người này?');">Phân quyền</button>
             </a>
