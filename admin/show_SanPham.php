@@ -27,7 +27,7 @@ foreach ($dSSP as $item) {
          <th id="text-center">So Luong</th>
          <th id="text-center">Khuyen Mai</th>
          <th id="text-center">Hinh Anh</th>
-         <th id="text-center"></th>
+         <th id="text-center" style="width:8%"></th>
          <th id="text-center"></th>
       </tr>
       <tr>

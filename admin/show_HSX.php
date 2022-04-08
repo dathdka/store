@@ -33,7 +33,7 @@ require_once("../admin/layoutAdmin/header.php");
             </td>
             <td id="text-center">
                 <a href="edit_HSX.php?MaNSX=<?php echo $item["MaNSX"] ?>">
-                <button>Chỉnh sửa</button>
+                <button class="btn btn-primary">Chỉnh sửa</button>
                 </a>
             <!-- <form method="post">
                 <input type="submit" name="btnEdit" value="Chỉnh sửa" class="btn btn-primary">
