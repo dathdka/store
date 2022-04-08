@@ -5,7 +5,11 @@
     require_once("../entities/sanPham.class.php");
     require_once("../config/db.class.php");
     include("../KhachHang/permission.php");
-    $DB = new dB();
+    
+?>
+
+<?php
+$DB = new dB();
     $Email = $_COOKIE["username"];
     $dSGH =  gioHang::dSGH($Email);
     $tongTien = 0 ;
@@ -14,7 +18,6 @@
         $sql = "SELECT * FROM sanpham WHERE MaSP =" . $item["MaSP"];
         $temp = mysqli_fetch_array(mysqli_query($DB->connect(),$sql));
 ?>
-
 <table class="table" id="margin-top-110">
 		<tr>
     	<th style="width:40%" class="table__heading">Tên Sản Phẩm</th>
@@ -44,25 +47,13 @@
 		<button type="submit" class="btn btn-danger btn-sm" id="<?php echo $item["MaSP"]; ?>" onclick="xoaSP(<?php  echo $item['MaSP']; ?>);" ><i class="fa fa-trash-o"></i></button>
 	</td>
   	</tr>
-      <tr>
-        	<td><a href="sanPham.php" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a></td>
-        	<td colspan="2" class="hidden-xs"></td>
-    		<td class="hidden-xs text-center"></td>
-			<td data-heading="Thanh Toán" style="margin-top: 6px;">	
-			<?php $TK = taiKhoan::layTaiKhoan($Email); ?>
-    		<a class="btn btn-success btn-block" href="<?php echo "thanhToan.php?Email=".$Email."&tongTien=".$tongTien."&hoTen=".$TK->HoTen."&SDT=".$TK->SDT ?>">Thanh toán
-				<i class="fa fa-angle-right"></i>
-    		</a>
-	</td>
-      </tr>
 </table>
-    
+	
 		<?php
     		$tongTien += ($temp["DonGia"]- ($temp["DonGia"]*$temp["KhuyenMai"]/100)) *$item["SoLuong"];
     	?>
 		<?php
 		}
-
     		echo "	
 			<table class='table'>
 			<tr>
@@ -76,6 +67,12 @@
     }
     require_once("../KhachHang/layout/footer.php");
 ?>
+			<a href="sanPham.php" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
+			<?php $TK = taiKhoan::layTaiKhoan($Email); ?>	
+    		<a class="btn btn-success" style="float:right;padding-left: 20px; " href="<?php echo "thanhToan.php?Email=".$Email."&tongTien=".$tongTien."&hoTen=".$TK->HoTen."&SDT=".$TK->SDT ?>">Thanh toán
+				<i class="fa fa-angle-right"></i>
+    		</a>
+
 <script type="text/javascript">
     function changeAmount(MaSP){
         var x = document.getElementById(MaSP);

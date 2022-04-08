@@ -47,7 +47,7 @@
 					</div>
 				</div>
 
-				<div class="item-slick1" style="background-image: url(images/banner_10.jpg);">
+				<div class="item-slick1" style="background-image: url(images/banner_12.jpg);">
 					<div class="container h-full">
 						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
 							<div class="layer-slick1 animated visible-false" data-appear="rollIn" data-delay="0">
@@ -107,21 +107,21 @@
 		<div class="block2-pic hov-img0 " id="margin-img" style="margin: 26px 0px 0px 18px; float: left; ">
 		<img src="<?php echo $item->HinhAnh ?>" style="width:200px; height:200px">
 		</div>
-		<div class="block2-txt-child1" style="text-align: center;float: right;width: 61%;margin-top: 23px;height: 80%;">
+		<div class="block2-txt-child1" style="text-align: left;float: right;width: 61%;margin-top: 23px;height: 80%;">
         <h2><?php echo $item->TenSP ?></h2>
         <?php if($item->KhuyenMai>0) {
             ?>
-                <h2 style="text-decoration: line-through;"><?php echo $item->DonGia ?></h2>
-                <h2><?php echo $item->DonGia - ($item->KhuyenMai* $item->DonGia)/100 ?></h2>
+                <h2 style="text-decoration: line-through; ">Giá: <?php echo $item->DonGia ?></h2>
+                <h2 style="color:red">Giá Khuyến Mãi: <?php echo $item->DonGia - ($item->KhuyenMai* $item->DonGia)/100 ?></h2>
         <?php    }
         else{ ?>
-        <h2><?php echo $item->DonGia ?></h2>
+        <h2>Giá: <?php echo $item->DonGia ?></h2>
         <?php }
         ?>
-        <h2><?php echo ($item->GioiTinh == "0") ? "Nam" : "Nữ"; ?></h2>
-        <h2><?php echo $item->MoTa ?></h2>
-        <h2><?php echo $item->SoLuong ?></h2>
-        <h2 style="line-through:true"><?php echo $item->KhuyenMai ?></h2>
+        <h2>Giới Tính: <?php echo ($item->GioiTinh == "0") ? "Nam" : "Nữ"; ?></h2>
+        <h2>Mô Tả: <?php echo $item->MoTa ?></h2>
+        <h2 style="display:none"> Số Lượng: <?php echo $item->SoLuong ?></h2>
+        <h2 style="line-through:true">Khuyến Mãi: <?php echo $item->KhuyenMai ?>%</h2>
         </div>
 
         <?php if(isset($_COOKIE["username"])){ ?>

@@ -27,9 +27,7 @@ $item =  taiKhoan::layTaiKhoan($Email);
         $SDT = $_POST["txtSDT"];
         $DiaChi = $_POST["txtDiaChi"];
         $result = taiKhoan::editThongTin($Email, $HoTen, $SDT, $DiaChi);
-        if($result){
-            header("Location: edit_ThongTin.php?thanhCong");
-        }
+
     }
 require_once("../KhachHang/layout/footer.php");
 ?>

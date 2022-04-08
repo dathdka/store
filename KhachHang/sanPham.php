@@ -133,15 +133,15 @@ foreach ($dSSP as $item) {
         <h2><?php echo $item["TenSP"] ?></h2>
         <?php if($item["KhuyenMai"]>0) {
             ?>
-                <h2 style="text-decoration: line-through;"><?php echo $item["DonGia"] ?></h2>
-                <h2 style="color: red"><?php echo $item["DonGia"] - ($item["KhuyenMai"]* $item["DonGia"])/100 ?></h2>
+                <h2 style="text-decoration: line-through;">Đơn Giá: <?php echo $item["DonGia"] ?></h2>
+                <h2 style="color: red">Khuyến Mãi: <?php echo $item["DonGia"] - ($item["KhuyenMai"]* $item["DonGia"])/100 ?></h2>
         <?php    }
         else{ ?>
-        <h2><?php echo $item["DonGia"] ?></h2>
+        <h2>Đơn Giá: <?php echo $item["DonGia"] ?></h2>
         <?php }
         ?>
-        <h2><?php echo ($item["GioiTinh"] == "0") ? "Nam" : "Nữ"; ?></h2>
-        <h2><?php echo $item["KhuyenMai"] ?>%</h2>
+        <h2>Giới Tính: <?php echo ($item["GioiTinh"] == "0") ? "Nam" : "Nữ"; ?></h2>
+        <h2>Khuyến Mãi: <?php echo $item["KhuyenMai"] ?>%</h2>
         </div>
         
         <?php if(isset($_COOKIE["username"])){ ?>
@@ -166,6 +166,9 @@ foreach ($dSSP as $item) {
                         <input type='button' value='Đăng nhập để mua hàng' class='btn btn-primary' id='margin-top'/>
                     </a>";
         } ?>
+        <a href="chiTietSanPham.php?MaSP=<?php echo $item["MaSP"]?>">
+            <button class="btn btn-primary " id="margin-top">Xem chi tiết sản phẩm</button>
+        </a>
     </div>
 <?php
 }

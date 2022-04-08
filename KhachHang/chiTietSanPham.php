@@ -16,25 +16,25 @@
             <img src="<?php echo $item->HinhAnh ?>" style="width:300px">
         </div>
         <div class="block2-txt-child1" style="text-align:center;">
-        <h1><?php echo $item->MaSP ?></h1>
+        <h1 style="display:none"><?php echo $item->MaSP ?></h1>
         <h1><?php echo $item->TenSP ?></h1>
         <?php if($item->KhuyenMai>0) {
             ?>
-                <h1 style="text-decoration: line-through;"><?php echo $item->DonGia ?></h1>
-                <h1><?php echo $item->DonGia - ($item->KhuyenMai* $item->DonGia)/100 ?></h1>
+                <h1 style="text-decoration: line-through;">Giá: <?php echo $item->DonGia ?></h1>
+                <h1 style="color:red">Giá Khuyến Mãi: <?php echo $item->DonGia - ($item->KhuyenMai* $item->DonGia)/100 ?></h1>
         <?php    }
         else{ ?>
-        <h1><?php echo $item->DonGia ?></h1>
+        <h1>Giá: <?php echo $item->DonGia ?></h1>
         <?php }
         ?>
-        <h1><?php echo ($item->GioiTinh == "0") ? "Nam" : "Nữ"; ?></h1>
-        <h1><?php echo $item->MoTa ?></h1>
-        <h1><?php echo $item->SoLuong ?></h1>
-        <h1 style="line-through:true"><?php echo $item->KhuyenMai ?></h1>
+        <h1>Giới Tính: <?php echo ($item->GioiTinh == "0") ? "Nam" : "Nữ"; ?></h1>
+        <h1>Mô Tả: <?php echo $item->MoTa ?></h1>
+        <h1 style="display:none">Số Lượng: <?php echo $item->SoLuong ?></h1>
+        <h1 style="line-through:true">Khuyến Mãi: <?php echo $item->KhuyenMai ?>%</h1>
         </div>
         <?php if(isset($_COOKIE["username"])){ ?>
         <form method="post" onsubmit="return false" name="form">
-            <button type="submit" name="btnGio" class="btn btn-primary"id=<?php echo $item->MaSP; ?> onclick="changevalue(<?php echo $item->MaSP ?>);">
+            <button type="submit" name="btnGio" class="btn btn-primary" id="margin-top" id=<?php echo $item->MaSP; ?> onclick="changevalue(<?php echo $item->MaSP ?>);">
                 <?php
                 $DB = new dB();
                 $sql = "SELECT * FROM gioHang WHERE MaSP =" . $item->MaSP;
@@ -60,7 +60,7 @@
     }  ?>
 </div>
 
-<span class="fb-comments-count" data-href="https://www.localhost<?php echo $_SERVER['PHP_SELF']."?MaSP=".$MaSP; ?>"></span>
+<span style="display:none" class="fb-comments-count" data-href="https://www.localhost<?php echo $_SERVER['PHP_SELF']."?MaSP=".$MaSP; ?>"></span>
     
 
 <div class="fb-comments" data-href="https://www.localhost<?php echo $_SERVER['PHP_SELF']."?MaSP=".$MaSP; ?>" data-width="100%" data-numposts="5"></div>

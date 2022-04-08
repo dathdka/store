@@ -68,10 +68,14 @@ foreach ($dSSP as $item) {
             <img src="<?php echo $item["HinhAnh"]?>" style="width:100px">
         </td>
 
+
         <td id="text-center" width="5%" >
-            <form method="post">
+            <a href=" edit_SanPham.php?MaSP=<?php echo $item["MaSP"] ?>">
+                <button class="btn btn-primary">Chỉnh sửa</button>
+            </a>
+            <!-- <form method="post">
                 <input type="submit" name="btnEdit" value="Chỉnh sửa" class="btn btn-primary">
-            </form>
+            </form> -->
         </td>
 
         <td id="text-center" width="5%">

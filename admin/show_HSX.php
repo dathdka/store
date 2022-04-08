@@ -27,14 +27,17 @@ require_once("../admin/layoutAdmin/header.php");
                 <p><?php echo $item["TenNSX"]?></p>
                 <?php
                     if(isset($_POST["btnEdit"])){
-                    header("location: edit_HSX.php?MaNSX=" .$item['MaNSX']) ;
+                    header("location: edit_HSX.php?MaNSX=" .$item["MaNSX"]) ;
                }
                 ?>
             </td>
             <td id="text-center">
-            <form method="post">
+                <a href="edit_HSX.php?MaNSX=<?php echo $item["MaNSX"] ?>">
+                <button>Chỉnh sửa</button>
+                </a>
+            <!-- <form method="post">
                 <input type="submit" name="btnEdit" value="Chỉnh sửa" class="btn btn-primary">
-            </form>
+            </form> -->
             </td>
             <td id="text-center">
                 <a class="button" href="delete_HSX.php?MaNSX=<?php echo $item["MaNSX"];?>" onclick="javascript: return confirm('Bạn có chắc chắn muốn xóa?');"><i class="fa fa-trash"></i></a>
