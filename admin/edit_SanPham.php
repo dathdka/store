@@ -117,11 +117,7 @@ if(isset($_POST["btnXacNhan"])){
     }
     $editSP = new sanPham($MaNSX, $TenSP, $DonGia, $GioiTinh, $SoLuong, $MoTa, $KhuyenMai, $target_file);
     $editSP->doiGiaTri($_GET["MaSP"]);
-    if (!$result) {
-        header("Location: edit_San_Pham.php?thanhCong");
-    } else {
-        header("Location: edit_San_Pham.php?thatBai");
-    }
+
 }
 
 ?>

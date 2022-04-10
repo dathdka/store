@@ -49,7 +49,7 @@ foreach ($dSSP as $item) {
         </td>
 
         <td id="text-center" width="8%">
-            <p><?php echo ($item["GioiTinh"]=="0")?"Nam":"Nữ";?></p>
+            <p><?php echo ($item["GioiTinh"]=="1")?"Nam":"Nữ";?></p>
         </td>
 
         <td id="text-center" width="15%">
