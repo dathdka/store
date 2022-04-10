@@ -121,7 +121,7 @@ if(isset($_GET["btnXacNhan"])){
 <?php
 foreach ($dSSP as $item) {
 ?>
-    <div class="col-md-5 col-sm-6 col-xs-12 isotope-item men" id="border-product" >
+    <div class="col-md-5 col-sm-6 col-xs-12 isotope-item men" id="border-product" style="margin-bottom:15px">
         <div class="block2-pic hov-img0" id="border-img" >
             <a href="chiTietSanPham.php?MaSP=<?php echo $item["MaSP"]?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
 				Quick View
